@@ -1,113 +1,266 @@
-import Image from 'next/image'
+import type { FC } from "react"
+import Link from "next/link"
+import Button from "@/components/Button"
+import RightArrow from "@/components/Icons/RightArrow"
+import ImageWithBorder from "@/components/ImageWithBorder"
+import Card from "@/components/Card"
 
-export default function Home() {
+const Home: FC = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <>
+      <main className="bg-hero-img bg-cover bg-center bg-no-repeat px-col-outer text-center text-light lg:px-col-inner">
+        <h1 className="pt-28 text-4xl font-bold underline decoration-accent md:text-5xl lg:pt-40  2xl:text-6xl 3xl:text-7xl">
+          Srot Foundation
+        </h1>
+        <p className="mb-8 mt-10 text-xl md:mb-14 md:mt-16 md:text-2xl 2xl:text-3xl">
+          We are convinced that a truly educated world alone shall be peaceful,
+          prosperous and in harmony with nature. Therefore, education must be
+          holistic, helping the ‘human’ in us grow as it trains us for
+          livelihood.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+        <div className="flex flex-row items-center justify-center gap-4 pb-[60%] text-lg md:text-xl 2xl:pb-[50%] 2xl:text-2xl">
+          <Link href="/support">
+            <Button
+              text="Support Us"
+              icon={<RightArrow />}
+              type="Primary"
+              theme="Dark"
             />
-          </a>
+          </Link>
+          <Link href="/story">
+            <Button text="Learn More" type="Secondary" theme="Dark" />
+          </Link>
         </div>
-      </div>
+      </main>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section
+        role="About Srot"
+        className="flex items-center justify-between gap-12 bg-dark px-col-outer text-light lg:pl-col-inner lg:pr-col-inner 2xl:pr-0"
+      >
+        <div className="w-[60ch] py-16 text-lg leading-9 lg:py-36 3xl:text-2xl">
+          <h3 className="mb-6 text-[32px] font-medium md:text-4xl 2xl:mb-14 3xl:text-5xl">
+            <span className="font-bold text-accent">&lsquo;Srot&rsquo; </span>
+            means &lsquo;Source&rsquo;.
+          </h3>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+          <div className="relative block aspect-[4/3] 2xl:hidden">
+            <ImageWithBorder src="/hero.png" alt="Test" />
+          </div>
+
+          <p className="mt-9">
+            Education is a process of Exploration, Discovery, Application,
+            Integration.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          <p className="mt-9">
+            It is a continuous journey to the source of knowledge itself.
+            Through this process we help children and youngsters learn about not
+            only academics but also the mind, emotions, relationships, work,
+            money, health and critical thinking for a joyful and meaningful
+            life.
           </p>
-        </a>
+          <p className="mt-9">We Aim to help local students and youth to:</p>
+          <ol className="mb-16 mt-4 list-decimal pl-12">
+            <li>Become educated and well-rounded individuals.</li>
+            <li>
+              Become intellectually and emotionally independant and resilient
+              individuals
+            </li>
+            <li>
+              Become skilled and confident to take care of their lives and
+              livelihoods.
+            </li>
+            <li>
+              Become aware, conscious and constructive members of the
+              communities they live in.
+            </li>
+          </ol>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+          <Button
+            text="Read out story"
+            icon={<RightArrow />}
+            type="Secondary"
+            theme="Dark"
+          />
+        </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+        <div className="relative mr-2 hidden aspect-[4/3] w-1/2 2xl:block">
+          <ImageWithBorder src="/hero.png" alt="Test" />
+        </div>
+      </section>
+
+      <section
+        role="Srot's Projects"
+        className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36"
+      >
+        <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
+          <div>
+            <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
+              Our Projects
+            </h3>
+            <p className="w-[minmax(20ch, max-content)] sm:w-full">
+              Your support helps fund projects like:
+            </p>
+          </div>
+
+          <Link className="hidden sm:block" href="/projects">
+            <Button
+              text="See all"
+              icon={<RightArrow />}
+              type="Secondary"
+              theme="Light"
+            />
+          </Link>
+        </div>
+
+        <div className="grid gap-x-16 gap-y-14 lg:grid-cols-1 xl:grid-cols-2 2xl:gap-x-32 2xl:gap-y-20">
+          <Card
+            type="Project"
+            img="/hero.png"
+            alt="Srot READ Project"
+            title="Srot READ Project"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias."
+            btnType="Primary"
+            slug="test-project"
+          />
+          <Card
+            type="Project"
+            img="/hero.png"
+            alt="Srot READ Project"
+            title="Srot READ Project"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            btnType="Secondary"
+            slug="test-project"
+          />
+          <Card
+            type="Project"
+            img="/hero.png"
+            alt="Srot READ Project"
+            title="Srot READ Project"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet?."
+            btnType="Secondary"
+            slug="test-project"
+          />
+          <Card
+            type="Project"
+            img="/hero.png"
+            alt="Srot READ Project"
+            title="Srot READ Project"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias."
+            btnType="Secondary"
+            slug="test-project"
+          />
+        </div>
+
+        <Link href="/projects" className="mt-12 block text-base sm:hidden">
+          <Button
+            text="See all"
+            icon={<RightArrow />}
+            type="Secondary"
+            theme="Light"
+          />
+        </Link>
+      </section>
+
+      <section
+        role="Srot's Workshops"
+        className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36"
+      >
+        <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
+          <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
+            Our Workshops
+          </h3>
+
+          <Link className="hidden sm:block" href="/workshops">
+            <Button
+              text="See all"
+              icon={<RightArrow />}
+              type="Secondary"
+              theme="Light"
+            />
+          </Link>
+        </div>
+
+        <div className="flex max-w-5xl flex-col gap-14 2xl:gap-20">
+          <Card
+            type="Workshop"
+            img="/hero.png"
+            alt="Srot READ Workshop"
+            title="Srot READ Workshop"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias."
+            btnType="Secondary"
+            slug="test-workshop"
+          />
+          <Card
+            type="Workshop"
+            img="/hero.png"
+            alt="Srot READ Workshop"
+            title="Srot READ Workshop"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias."
+            btnType="Secondary"
+            slug="test-workshop"
+          />
+          <Card
+            type="Workshop"
+            img="/hero.png"
+            alt="Srot READ Workshop"
+            title="Srot READ Workshop"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias."
+            btnType="Secondary"
+            slug="test-workshop"
+          />
+        </div>
+
+        <Link href="/workshops" className="mt-12 block text-base sm:hidden">
+          <Button
+            text="See all"
+            icon={<RightArrow />}
+            type="Secondary"
+            theme="Light"
+          />
+        </Link>
+      </section>
+
+      <section
+        role="Srot's Funding Goals"
+        className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36"
+      >
+        <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
+          <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
+            Funding Goals
+          </h3>
+
+          <Link className="hidden sm:block" href="/support">
+            <Button
+              text="Find out more"
+              icon={<RightArrow />}
+              type="Primary"
+              theme="Light"
+            />
+          </Link>
+        </div>
+
+        <div className="rounded bg-dark px-14 py-10 text-light 2xl:px-24 2xl:py-16">
+          <p className="mx-auto mb-8 w-max text-left text-xl md:text-2xl xl:mx-0 3xl:text-3xl">
+            ₹ 50,000 / ₹ 1,50,000
           </p>
-        </a>
-      </div>
-    </main>
+          {/* w-[Percentage Value] left-[PV - 10] md:left-[PV - 4]  */}
+          <div className="relative mb-20 block h-6 w-full rounded-full bg-light md:h-8">
+            <div className="absolute left-0 top-0 h-full w-[70%] rounded-full bg-accent" />
+            <span className="tooltip absolute -bottom-9 left-[60%] z-10 inline-block h-full w-min rounded bg-light p-1 align-middle text-sm font-medium text-dark md:-bottom-11 md:left-[66%] md:text-lg 3xl:text-xl">
+              80%
+            </span>
+          </div>
+
+          <Link
+            href="/support"
+            className="mx-auto w-max text-lg md:text-xl xl:mx-0 3xl:text-2xl"
+          >
+            <Button text="Support Us" type="Primary" theme="Dark" />
+          </Link>
+        </div>
+      </section>
+    </>
   )
 }
+
+export default Home
