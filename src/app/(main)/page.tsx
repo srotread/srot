@@ -8,20 +8,45 @@ import Card from "@/components/Card"
 
 import reader from "@/lib/keystatic"
 import { DocumentRenderer } from "@keystatic/core/renderer"
+import Image from "next/image"
 
 const Home: FC = async () => {
   const homepage = await reader.singletons.homepage.read({
     resolveLinkedFiles: true,
   })
 
+  if (!homepage) {
+    throw new Error("Keystatic: Content not found - Home Page singleton.")
+  }
+
+  const {
+    backgroundImage,
+    backgroundImageAlt,
+    headline,
+    subheadline,
+    storyDescription,
+    storyImage,
+    storyImageAlt,
+  } = homepage
+
+  // const { title, description, image, imageAlt } = project
+
   return (
     <>
-      <main className="bg-hero-img bg-cover bg-center bg-no-repeat px-col-outer text-center text-light lg:px-col-inner">
+      <main className="px-col-outer text-center text-light lg:px-col-inner relative">
+        <Image
+          src={backgroundImage}
+          alt={backgroundImageAlt}
+          fill
+          priority
+          className="object-cover w-screen h-full -z-10"
+        />
+
         <h1 className="pt-28 text-4xl font-bold underline decoration-accent md:text-5xl lg:pt-40  2xl:text-6xl 3xl:text-7xl">
-          {homepage?.headline}
+          {headline}
         </h1>
         <p className="mb-8 mt-10 text-xl md:mb-14 md:mt-16 md:text-2xl 2xl:text-3xl">
-          {homepage?.subheadline}
+          {subheadline}
         </p>
         <div className="flex flex-row items-center justify-center gap-4 pb-[60%] text-lg md:text-xl 2xl:pb-[50%] 2xl:text-2xl">
           <Link href="/support">
@@ -49,12 +74,12 @@ const Home: FC = async () => {
           </h3>
 
           <div className="relative block aspect-[4/3] 2xl:hidden">
-            <ImageWithBorder src="/hero.png" alt="Test" />
+            <ImageWithBorder src={storyImage} alt={storyImageAlt} />
           </div>
 
           <div className="prose prose-invert prose-lg text-light marker:text-light mt-9">
-            {homepage?.storyDescription && (
-              <DocumentRenderer document={homepage?.storyDescription} />
+            {storyDescription && (
+              <DocumentRenderer document={storyDescription} />
             )}
           </div>
 
@@ -67,7 +92,7 @@ const Home: FC = async () => {
         </div>
 
         <div className="relative mr-2 hidden aspect-[4/3] w-1/2 2xl:block">
-          <ImageWithBorder src="/hero.png" alt="Test" />
+          <ImageWithBorder src={storyImage} alt={storyImageAlt} />
         </div>
       </section>
 
@@ -101,7 +126,7 @@ const Home: FC = async () => {
             img="/hero.png"
             alt="Srot READ Project"
             title="Srot READ Project"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias."
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet Animi, esse molestias."
             btnType="Primary"
             slug="test-project"
           />
