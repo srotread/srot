@@ -1,4 +1,4 @@
-import { config, fields, singleton } from "@keystatic/core"
+import { config, fields, singleton, collection } from "@keystatic/core"
 
 export default config({
   storage: {
@@ -37,6 +37,14 @@ export default config({
           directory: "/public/images/home",
           publicPath: "/images/home",
         }),
+        backgroundImageAlt: fields.text({
+          label: "Background Image Alternate Text - Main section",
+          description:
+            "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
 
         storyDescription: fields.document({
           label: "Content - Story section",
@@ -51,6 +59,59 @@ export default config({
           },
           directory: "/public/images/home",
           publicPath: "/images/home",
+        }),
+        storyImageAlt: fields.text({
+          label: "Image Alternate Text - Story section",
+          description:
+            "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+      },
+    }),
+  },
+
+  collections: {
+    projects: collection({
+      label: "Projects",
+      path: "src/data/projects/*",
+      slugField: "title",
+      schema: {
+        title: fields.slug({
+          name: {
+            label: "Title",
+            description: "Title of this Project.",
+          },
+          slug: {
+            label: "Slug",
+            description: "A unique url safe identifier for this project.",
+          },
+        }),
+        description: fields.text({
+          label: "Description",
+          description:
+            "Displayed in the Project Card.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        image: fields.image({
+          label: "Image",
+          description: "Displayed on the Project Card & prominently on the Project's page.",
+          validation: {
+            isRequired: true,
+          },
+          directory: "/public/images/projects/",
+          publicPath: "/images/projects/",
+        }),
+        imageAlt: fields.text({
+          label: "Image Alternate Text",
+          description:
+            "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+          validation: {
+            length: { min: 1 },
+          },
         }),
       },
     }),
