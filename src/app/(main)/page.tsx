@@ -14,9 +14,13 @@ const Home: FC = async () => {
   const homepage = await reader.singletons.homepage.read({
     resolveLinkedFiles: true,
   })
-
+  const projects = await reader.collections.projects.all()
+  
   if (!homepage) {
     throw new Error("Keystatic: Content not found - Home Page singleton.")
+  }
+  if (!projects) {
+    throw new Error("Keystatic: Content not found - Projects collection.")
   }
 
   const {
@@ -28,8 +32,6 @@ const Home: FC = async () => {
     storyImage,
     storyImageAlt,
   } = homepage
-
-  // const { title, description, image, imageAlt } = project
 
   return (
     <>
@@ -121,42 +123,21 @@ const Home: FC = async () => {
         </div>
 
         <div className="grid gap-x-16 gap-y-14 lg:grid-cols-1 xl:grid-cols-2 2xl:gap-x-32 2xl:gap-y-20">
-          <Card
-            type="Project"
-            img="/hero.png"
-            alt="Srot READ Project"
-            title="Srot READ Project"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet Animi, esse molestias."
-            btnType="Primary"
-            slug="test-project"
-          />
-          <Card
-            type="Project"
-            img="/hero.png"
-            alt="Srot READ Project"
-            title="Srot READ Project"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            btnType="Secondary"
-            slug="test-project"
-          />
-          <Card
-            type="Project"
-            img="/hero.png"
-            alt="Srot READ Project"
-            title="Srot READ Project"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet?."
-            btnType="Secondary"
-            slug="test-project"
-          />
-          <Card
-            type="Project"
-            img="/hero.png"
-            alt="Srot READ Project"
-            title="Srot READ Project"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias."
-            btnType="Secondary"
-            slug="test-project"
-          />
+          {projects.map(({ slug, entry }, i) => {
+            const {title, description, image, imageAlt} = entry
+            
+            return (
+            <Card
+              key={slug}
+              type="Project"
+              img={image}
+              alt={imageAlt}
+              title={title}
+              description={description}
+              btnType={i === 0 ? 'Primary' : 'Secondary'}
+              slug={slug}
+            />
+          )})}
         </div>
 
         <Link href="/projects" className="mt-12 block text-base sm:hidden">
