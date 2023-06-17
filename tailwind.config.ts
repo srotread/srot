@@ -1,12 +1,15 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import type { Config } from "tailwindcss"
+import { fontFamily } from "tailwindcss/defaultTheme"
+import twHamburgers from "tailwind-hamburgers"
+import forms from "@tailwindcss/forms"
+import headlessui from "@headlessui/tailwindcss"
+import typography from "@tailwindcss/typography"
 
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -48,9 +51,7 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tailwind-hamburgers"),
-    require("@tailwindcss/forms"),
-    require("@headlessui/tailwindcss"),
-  ],
-}
+  plugins: [twHamburgers, forms, headlessui, typography],
+} satisfies Config
+
+export default config
