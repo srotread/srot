@@ -1,22 +1,27 @@
 import type { FC } from "react"
 import Link from "next/link"
+
 import Button from "@/components/Button"
 import RightArrow from "@/components/Icons/RightArrow"
 import ImageWithBorder from "@/components/ImageWithBorder"
 import Card from "@/components/Card"
 
-const Home: FC = () => {
+import reader from "@/lib/keystatic"
+import { DocumentRenderer } from "@keystatic/core/renderer"
+
+const Home: FC = async () => {
+  const homepage = await reader.singletons.homepage.read({
+    resolveLinkedFiles: true,
+  })
+
   return (
     <>
       <main className="bg-hero-img bg-cover bg-center bg-no-repeat px-col-outer text-center text-light lg:px-col-inner">
         <h1 className="pt-28 text-4xl font-bold underline decoration-accent md:text-5xl lg:pt-40  2xl:text-6xl 3xl:text-7xl">
-          Srot Foundation
+          {homepage?.headline}
         </h1>
         <p className="mb-8 mt-10 text-xl md:mb-14 md:mt-16 md:text-2xl 2xl:text-3xl">
-          We are convinced that a truly educated world alone shall be peaceful,
-          prosperous and in harmony with nature. Therefore, education must be
-          holistic, helping the ‘human’ in us grow as it trains us for
-          livelihood.
+          {homepage?.subheadline}
         </p>
         <div className="flex flex-row items-center justify-center gap-4 pb-[60%] text-lg md:text-xl 2xl:pb-[50%] 2xl:text-2xl">
           <Link href="/support">
@@ -47,33 +52,11 @@ const Home: FC = () => {
             <ImageWithBorder src="/hero.png" alt="Test" />
           </div>
 
-          <p className="mt-9">
-            Education is a process of Exploration, Discovery, Application,
-            Integration.
-          </p>
-          <p className="mt-9">
-            It is a continuous journey to the source of knowledge itself.
-            Through this process we help children and youngsters learn about not
-            only academics but also the mind, emotions, relationships, work,
-            money, health and critical thinking for a joyful and meaningful
-            life.
-          </p>
-          <p className="mt-9">We Aim to help local students and youth to:</p>
-          <ol className="mb-16 mt-4 list-decimal pl-12">
-            <li>Become educated and well-rounded individuals.</li>
-            <li>
-              Become intellectually and emotionally independant and resilient
-              individuals
-            </li>
-            <li>
-              Become skilled and confident to take care of their lives and
-              livelihoods.
-            </li>
-            <li>
-              Become aware, conscious and constructive members of the
-              communities they live in.
-            </li>
-          </ol>
+          <div className="prose prose-invert prose-lg text-light marker:text-light mt-9">
+            {homepage?.storyDescription && (
+              <DocumentRenderer document={homepage?.storyDescription} />
+            )}
+          </div>
 
           <Button
             text="Read out story"
