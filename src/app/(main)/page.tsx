@@ -15,12 +15,16 @@ const Home: FC = async () => {
     resolveLinkedFiles: true,
   })
   const projects = await reader.collections.projects.all()
-  
+  const workshops = await reader.collections.workshops.all()
+
   if (!homepage) {
     throw new Error("Keystatic: Content not found - Home Page singleton.")
   }
   if (!projects) {
     throw new Error("Keystatic: Content not found - Projects collection.")
+  }
+  if (!workshops) {
+    throw new Error("Keystatic: Content not found - Workshops collection.")
   }
 
   const {
@@ -31,6 +35,8 @@ const Home: FC = async () => {
     storyDescription,
     storyImage,
     storyImageAlt,
+    projectsHeadline,
+    workshopsHeadline
   } = homepage
 
   return (
@@ -105,7 +111,7 @@ const Home: FC = async () => {
         <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
           <div>
             <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
-              Our Projects
+              {projectsHeadline}
             </h3>
             <p className="w-[minmax(20ch, max-content)] sm:w-full">
               Your support helps fund projects like:
@@ -124,20 +130,21 @@ const Home: FC = async () => {
 
         <div className="grid gap-x-16 gap-y-14 lg:grid-cols-1 xl:grid-cols-2 2xl:gap-x-32 2xl:gap-y-20">
           {projects.map(({ slug, entry }, i) => {
-            const {title, description, image, imageAlt} = entry
-            
+            const { title, description, image, imageAlt } = entry
+
             return (
-            <Card
-              key={slug}
-              type="Project"
-              img={image}
-              alt={imageAlt}
-              title={title}
-              description={description}
-              btnType={i === 0 ? 'Primary' : 'Secondary'}
-              slug={slug}
-            />
-          )})}
+              <Card
+                key={slug}
+                type="Project"
+                img={image}
+                alt={imageAlt}
+                title={title}
+                description={description}
+                btnType={i === 0 ? "Primary" : "Secondary"}
+                slug={slug}
+              />
+            )
+          })}
         </div>
 
         <Link href="/projects" className="mt-12 block text-base sm:hidden">
@@ -156,7 +163,7 @@ const Home: FC = async () => {
       >
         <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
           <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
-            Our Workshops
+            {workshopsHeadline}
           </h3>
 
           <Link className="hidden sm:block" href="/workshops">
@@ -170,33 +177,23 @@ const Home: FC = async () => {
         </div>
 
         <div className="flex max-w-5xl flex-col gap-14 2xl:gap-20">
-          <Card
-            type="Workshop"
-            img="/hero.png"
-            alt="Srot READ Workshop"
-            title="Srot READ Workshop"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias."
-            btnType="Secondary"
-            slug="test-workshop"
-          />
-          <Card
-            type="Workshop"
-            img="/hero.png"
-            alt="Srot READ Workshop"
-            title="Srot READ Workshop"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias."
-            btnType="Secondary"
-            slug="test-workshop"
-          />
-          <Card
-            type="Workshop"
-            img="/hero.png"
-            alt="Srot READ Workshop"
-            title="Srot READ Workshop"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias. Nihil deleniti incidunt vero facere vitae quod commodi amet? Animi, esse molestias."
-            btnType="Secondary"
-            slug="test-workshop"
-          />
+          {workshops.map(({ slug, entry }, i) => {
+            const { title, description, image, imageAlt, active } = entry
+
+            return (
+              <Card
+                key={slug}
+                type="Workshop"
+                img={image}
+                alt={imageAlt}
+                title={title}
+                description={description}
+                btnType={active ? "Primary" : "Secondary"}
+                btnTxt={active ? "Enroll now": "Learn more"}
+                slug={slug}
+              />
+            )
+          })}
         </div>
 
         <Link href="/workshops" className="mt-12 block text-base sm:hidden">
