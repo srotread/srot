@@ -1,14 +1,14 @@
 import type { FC } from "react"
 import Link from "next/link"
-
-import Button from "@/components/Button"
-import RightArrow from "@/components/Icons/RightArrow"
-import ImageWithBorder from "@/components/ImageWithBorder"
-import Card from "@/components/Card"
+import Image from "next/image"
 
 import reader from "@/lib/keystatic"
 import { DocumentRenderer } from "@keystatic/core/renderer"
-import Image from "next/image"
+import Button from "@/components/Button"
+
+import RightArrow from "@/components/Icons/RightArrow"
+import ImageWithBorder from "@/components/ImageWithBorder"
+import Card from "@/components/Card"
 
 const Home: FC = async () => {
   const homepage = await reader.singletons.homepage.read({
@@ -36,7 +36,7 @@ const Home: FC = async () => {
     storyImage,
     storyImageAlt,
     projectsHeadline,
-    workshopsHeadline
+    workshopsHeadline,
   } = homepage
 
   return (
@@ -189,7 +189,7 @@ const Home: FC = async () => {
                 title={title}
                 description={description}
                 btnType={active ? "Primary" : "Secondary"}
-                btnTxt={active ? "Enroll now": "Learn more"}
+                btnTxt={active ? "Enroll now" : "Learn more"}
                 slug={slug}
               />
             )
