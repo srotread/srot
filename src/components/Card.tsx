@@ -11,6 +11,7 @@ type CardProps = {
   title: string
   description: string
   btnType: ButtonType
+  btnTxt?: string
   slug: string
 }
 
@@ -21,6 +22,7 @@ const Card: FC<CardProps> = ({
   title,
   description,
   btnType,
+  btnTxt,
   slug,
 }) => {
   return (
@@ -55,10 +57,10 @@ const Card: FC<CardProps> = ({
           </div>
 
           <Link
-            href={`project/${slug}`}
+            href={slug}
             className="text-base md:text-lg 3xl:text-xl"
           >
-            <Button text="Learn more" type={btnType} theme="Dark" />
+            <Button text={btnTxt || "Learn more"} type={btnType} theme="Dark" />
           </Link>
         </div>
       </div>
