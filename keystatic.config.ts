@@ -68,6 +68,30 @@ export default config({
             length: { min: 1 },
           },
         }),
+        projectsHeadline: fields.text({
+          label: "Headline - Projects section",
+          description:
+            "Main underlined heading for the Projects section.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        projectsSubheadline: fields.text({
+          label: "Subheadline - Projects section",
+          description:
+            "Shown under the Main underlined heading.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        workshopsHeadline: fields.text({
+          label: "Headline - Workshops section",
+          description:
+            "Main underlined heading for the Workshops section.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
       },
     }),
   },
@@ -90,20 +114,67 @@ export default config({
         }),
         description: fields.text({
           label: "Description",
-          description:
-            "Displayed in the Project Card.",
+          description: "Displayed in the Project Card.",
           validation: {
             length: { min: 1 },
           },
         }),
         image: fields.image({
           label: "Image",
-          description: "Displayed on the Project Card & prominently on the Project's page.",
+          description:
+            "Displayed on the Project Card & prominently on the Project's page.",
           validation: {
             isRequired: true,
           },
           directory: "/public/images/projects/",
           publicPath: "/images/projects/",
+        }),
+        imageAlt: fields.text({
+          label: "Image Alternate Text",
+          description:
+            "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+      },
+    }),
+    workshops: collection({
+      label: "Workshops",
+      path: "src/data/workshops/*",
+      slugField: "title",
+      schema: {
+        title: fields.slug({
+          name: {
+            label: "Title",
+            description: "Title of this Workshop.",
+          },
+          slug: {
+            label: "Slug",
+            description: "A unique url safe identifier for this workshop.",
+          },
+        }),
+        description: fields.text({
+          label: "Description",
+          description: "Displayed in the Workshop Card.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        active: fields.checkbox({
+          label: "Active",
+          description:
+            "Active workshops display and Enroll button, Inactive workshops display a Learn more button.",
+        }),
+        image: fields.image({
+          label: "Image",
+          description:
+            "Displayed on the Workshop Card & prominently on the Workshop's page.",
+          validation: {
+            isRequired: true,
+          },
+          directory: "/public/images/workshops/",
+          publicPath: "/images/workshops/",
         }),
         imageAlt: fields.text({
           label: "Image Alternate Text",
