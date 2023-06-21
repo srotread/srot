@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
+import * as config from "@/lib/config"
 import Button from "./Button"
 
 export default function Navbar() {
@@ -35,78 +36,17 @@ export default function Navbar() {
           className="hidden items-center gap-8 text-lg 2xl:flex
         3xl:text-xl"
         >
-          <Link
-            href="/"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/" && "link-active"
-            }`}
-          >
-            Home
-          </Link>
-          <Link
-            href="/story"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/story" && "link-active"
-            }`}
-          >
-            Our Story
-          </Link>
-          <Link
-            href="/projects"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/projects" && "link-active"
-            }`}
-          >
-            Projects
-          </Link>
-          <Link
-            href="/workshops"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/workshops" && "link-active"
-            }`}
-          >
-            Workshops
-          </Link>
-          <Link
-            href="/centres"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/centres" && "link-active"
-            }`}
-          >
-            Centres
-          </Link>
-          <Link
-            href="/media"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/media" && "link-active"
-            }`}
-          >
-            Media
-          </Link>
-          <Link
-            href="/team"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/team" && "link-active"
-            }`}
-          >
-            Team
-          </Link>
-          <Link
-            href="/work"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/work" && "link-active"
-            }`}
-          >
-            Work with Us
-          </Link>
-          <Link
-            href="/contact"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/contact" && "link-active"
-            }`}
-          >
-            Contact Us
-          </Link>
+          {config.pages.map((page, i) => (
+            <Link
+              key={i}
+              href={page.path}
+              className={`link-underline link-underline-black ${
+                currentRoute === page.path && "link-active"
+              }`}
+            >
+              {page.name}
+            </Link>
+          ))}
           <Link href="/support">
             <Button text="Support Us" type="Primary" theme="Light" />
           </Link>
@@ -137,87 +77,18 @@ export default function Navbar() {
               : "pointer-events-none -top-full opacity-0"
           } fixed left-0 right-0 z-0 flex h-screen w-full flex-col items-center gap-5 bg-dark pt-32 text-xl text-light transition-all duration-300 md:pt-40 md:text-2xl lg:gap-9 2xl:hidden`}
         >
-          <Link
-            href="/"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/" && "link-active"
-            }`}
-            onClick={() => setIsHamburgerOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="/story"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/story" && "link-active"
-            }`}
-            onClick={() => setIsHamburgerOpen(false)}
-          >
-            Our Story
-          </Link>
-          <Link
-            href="/projects"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/projects" && "link-active"
-            }`}
-            onClick={() => setIsHamburgerOpen(false)}
-          >
-            Projects
-          </Link>
-          <Link
-            href="/workshops"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/workshops" && "link-active"
-            }`}
-            onClick={() => setIsHamburgerOpen(false)}
-          >
-            Workshops
-          </Link>
-          <Link
-            href="/centres"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/centres" && "link-active"
-            }`}
-            onClick={() => setIsHamburgerOpen(false)}
-          >
-            Centres
-          </Link>
-          <Link
-            href="/media"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/media" && "link-active"
-            }`}
-            onClick={() => setIsHamburgerOpen(false)}
-          >
-            Media
-          </Link>
-          <Link
-            href="/team"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/team" && "link-active"
-            }`}
-            onClick={() => setIsHamburgerOpen(false)}
-          >
-            Team
-          </Link>
-          <Link
-            href="/work"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/work" && "link-active"
-            }`}
-            onClick={() => setIsHamburgerOpen(false)}
-          >
-            Work with Us
-          </Link>
-          <Link
-            href="/contact"
-            className={`link-underline link-underline-black ${
-              currentRoute === "/contact" && "link-active"
-            }`}
-            onClick={() => setIsHamburgerOpen(false)}
-          >
-            Contact Us
-          </Link>
+          {config.pages.map((page, i) => (
+            <Link
+              key={i}
+              href={page.path}
+              onClick={() => setIsHamburgerOpen(false)}
+              className={`link-underline link-underline-black ${
+                currentRoute === page.path && "link-active"
+              }`}
+            >
+              {page.name}
+            </Link>
+          ))}
           <Link href="/support" onClick={() => setIsHamburgerOpen(false)}>
             <Button text="Support Us" type="Primary" theme="Dark" />
           </Link>
