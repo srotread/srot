@@ -6,6 +6,8 @@ import reader from "@/lib/keystatic"
 import { DocumentRenderer } from "@keystatic/core/renderer"
 import Button from "@/components/Button"
 
+import { KeystaticContentNotFoundError } from "@/lib/exceptions"
+
 import RightArrow from "@/components/Icons/RightArrow"
 import ImageWithBorder from "@/components/ImageWithBorder"
 import Card from "@/components/Card"
@@ -18,13 +20,13 @@ const Home: FC = async () => {
   const workshops = await reader.collections.workshops.all()
 
   if (!homepage) {
-    throw new Error("Keystatic: Content not found - Home Page singleton.")
+    throw new KeystaticContentNotFoundError("Home Page singleton")
   }
   if (!projects) {
-    throw new Error("Keystatic: Content not found - Projects collection.")
+    throw new KeystaticContentNotFoundError("Projects collection")
   }
   if (!workshops) {
-    throw new Error("Keystatic: Content not found - Workshops collection.")
+    throw new KeystaticContentNotFoundError("Workshops collection")
   }
 
   const {
