@@ -48,7 +48,8 @@ export default config({
 
         storyDescription: fields.document({
           label: "Content - Story section",
-          description: "Shows under Story Headline.",
+          description:
+            "Shows under Story Headline. Please use only paragraphs of text.",
           formatting: true,
         }),
         storyImage: fields.image({
@@ -70,28 +71,78 @@ export default config({
         }),
         projectsHeadline: fields.text({
           label: "Headline - Projects section",
-          description:
-            "Main underlined heading for the Projects section.",
+          description: "Main underlined heading for the Projects section.",
           validation: {
             length: { min: 1 },
           },
         }),
         projectsSubheadline: fields.text({
           label: "Subheadline - Projects section",
-          description:
-            "Shown under the Main underlined heading.",
+          description: "Shown under the Main underlined heading.",
           validation: {
             length: { min: 1 },
           },
         }),
         workshopsHeadline: fields.text({
           label: "Headline - Workshops section",
-          description:
-            "Main underlined heading for the Workshops section.",
+          description: "Main underlined heading for the Workshops section.",
           validation: {
             length: { min: 1 },
           },
         }),
+      },
+    }),
+
+    storypage: singleton({
+      label: "Story Page",
+      path: "src/data/pages/story",
+      schema: {
+        description: fields.document({
+          label: "Content - Main section",
+          description:
+            "Shows under Story Headline & Srot means Source. Please use only paragraphs of text.",
+          formatting: true,
+        }),
+        contentSections: fields.array(
+          fields.object({
+            title: fields.text({
+              label: "Section Title",
+              description: "Underlined title.",
+              validation: {
+                length: { min: 1 },
+              },
+            }),
+            content: fields.document({
+              label: "Content",
+              description:
+                "Shows under the Section Title. Feel free to use paragraphs & lists.",
+              formatting: true,
+            }),
+            image: fields.image({
+              label: "Image",
+              description: "Image that shows side by side with the Content.",
+              validation: {
+                isRequired: true,
+              },
+              directory: "/public/images/story",
+              publicPath: "/images/story",
+            }),
+            imageAlt: fields.text({
+              label: "Image Alternate Text",
+              description:
+                "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+              validation: {
+                length: { min: 1 },
+              },
+            }),
+          }),
+          {
+            label: "Content Sections",
+            description:
+              "Sections of Content comprising of side by side colums of a Title, Content & an Image.",
+            itemLabel: (props) => props.fields.title.value,
+          }
+        ),
       },
     }),
   },
