@@ -2,3 +2,9 @@ contentSections:
   - title: The Beginning
     image: /images/story/contentSections/0/image.png
     imageAlt: Something
+  - title: Why is Srot needed?
+    image: /images/story/contentSections/1/image.png
+    imageAlt: Something
+  - title: What Motivates Us?
+    image: /images/story/contentSections/2/image.png
+    imageAlt: Something
