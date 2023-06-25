@@ -97,11 +97,43 @@ export default config({
       label: "Story Page",
       path: "src/data/pages/story",
       schema: {
-        description: fields.document({
-          label: "Content - Main section",
+        headline: fields.text({
+          label: "Headline - Main section",
           description:
-            "Shows under Story Headline & Srot means Source. Please use only paragraphs of text.",
-          formatting: true,
+            "The main underlined headline shown in the main section.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        description: fields.array(fields.text({
+          label: "Paragraph",
+          description:
+            "Paragraph of the description.",
+          validation: {
+            length: { min: 1 },
+          },
+        }), {
+            label: "Description paragraphs",
+            description:
+              "Shows under Story Headline & Srot means Source.",
+            itemLabel: (props) => props.value,
+          }),
+        image: fields.image({
+          label: "Image - Main section",
+          description: "Image that shows side by side with the Headline & description.",
+          validation: {
+            isRequired: true,
+          },
+          directory: "/public/images/story",
+          publicPath: "/images/story",
+        }),
+        imageAlt: fields.text({
+          label: "Image Alternate Text - Main section",
+          description:
+            "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+          validation: {
+            length: { min: 1 },
+          },
         }),
         contentSections: fields.array(
           fields.object({
