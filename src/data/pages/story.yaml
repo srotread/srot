@@ -1,3 +1,6 @@
+headline: Our Story
+image: /images/story/image.png
+imageAlt: Something
 contentSections:
   - title: The Beginning
     image: /images/story/contentSections/0/image.png
