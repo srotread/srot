@@ -1,18 +1,17 @@
-import type { FC } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
 import reader from "@/lib/keystatic"
 import { DocumentRenderer } from "@keystatic/core/renderer"
-import Button from "@/components/Button"
 
+import Button from "@/components/Button"
 import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 
 import RightArrow from "@/components/Icons/RightArrow"
 import ImageWithBorder from "@/components/ImageWithBorder"
 import Card from "@/components/Card"
 
-const Home: FC = async () => {
+const Home = async (): Promise<JSX.Element> => {
   const homepage = await reader.singletons.homepage.read({
     resolveLinkedFiles: true,
   })
