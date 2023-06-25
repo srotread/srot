@@ -56,10 +56,7 @@ const Card: FC<CardProps> = ({
             </p>
           </div>
 
-          <Link
-            href={slug}
-            className="text-base md:text-lg 3xl:text-xl"
-          >
+          <Link href={slug} className="text-base md:text-lg 3xl:text-xl">
             <Button text={btnTxt || "Learn more"} type={btnType} theme="Dark" />
           </Link>
         </div>

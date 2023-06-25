@@ -1,11 +1,10 @@
 import type { FC } from "react"
+
+import Link from "next/link"
 import ImageWithBorder from "@/components/ImageWithBorder"
 import Button from "@/components/Button"
 import RightArrow from "@/components/Icons/RightArrow"
-import Image from "next/image"
-import LQuote from "@/components/Icons/LQuote"
-import RQuote from "@/components/Icons/RQuote"
-import Link from "next/link"
+import Testimonial from "@/components/Testimonial"
 
 const Work: FC = () => {
   return (
@@ -135,54 +134,8 @@ const Work: FC = () => {
         </h3>
 
         <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2">
-          <div className="flex flex-col gap-8 overflow-hidden rounded bg-dark p-4 text-center text-light">
-            <div className="relative px-8 2xl:px-12">
-              <div className="absolute -top-2 left-0 h-6 w-6 text-accent xl:h-8 xl:w-8">
-                <LQuote />
-              </div>
-              <p className="inline-block text-lg font-light md:text-xl 3xl:text-2xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                aliquam, purus sit amet luctus venenatis, lectus magna fringilla
-                urna, porttitor rhoncus dolor purus non enim
-              </p>
-              <div className="absolute -bottom-2 right-0 h-6 w-6 text-accent xl:h-8 xl:w-8">
-                <RQuote />
-              </div>
-            </div>
-
-            <div className="relative mx-auto h-24 w-24 overflow-hidden rounded-full border-2 border-accent xl:h-28 xl:w-28">
-              <Image src="/hero.png" alt="Alt" className="object-cover" fill />
-            </div>
-
-            <p className="inline-block text-center text-base md:text-lg 3xl:text-xl">
-              Name Surname |{" "}
-              <span className="text-accent">Title or Company</span>
-            </p>
-          </div>
-          <div className="flex flex-col gap-8 overflow-hidden rounded bg-dark p-4 text-center text-light">
-            <div className="relative px-8 2xl:px-12">
-              <div className="absolute -top-2 left-0 h-6 w-6 text-accent xl:h-8 xl:w-8">
-                <LQuote />
-              </div>
-              <p className="inline-block text-lg font-light md:text-xl 3xl:text-2xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                aliquam, purus sit amet luctus venenatis, lectus magna fringilla
-                urna, porttitor rhoncus dolor purus non enim
-              </p>
-              <div className="absolute -bottom-2 right-0 h-6 w-6 text-accent xl:h-8 xl:w-8">
-                <RQuote />
-              </div>
-            </div>
-
-            <div className="relative mx-auto h-24 w-24 overflow-hidden rounded-full border-2 border-accent xl:h-28 xl:w-28">
-              <Image src="/hero.png" alt="Alt" className="object-cover" fill />
-            </div>
-
-            <p className="inline-block text-center text-base md:text-lg 3xl:text-xl">
-              Name Surname |{" "}
-              <span className="text-accent">Title or Company</span>
-            </p>
-          </div>
+          <Testimonial />
+          <Testimonial />
         </div>
       </section>
     </>
