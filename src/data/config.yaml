@@ -1,6 +1,6 @@
 logo: /images/config/logo.png
 url: https://srot.vercel.app
-siteTitle: "| Srot"
+siteTitle: Srot
 pages:
   - name: Home
     path: /
