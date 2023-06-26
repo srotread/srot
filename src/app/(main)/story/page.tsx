@@ -5,6 +5,38 @@ import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 
 import ImageWithBorder from "@/components/ImageWithBorder"
 
+export async function generateMetadata() {
+  const storypage = await reader.singletons.storypage.read()
+  const config = await reader.singletons.config.read()
+
+  if (!storypage) {
+    throw new KeystaticContentNotFoundError("Story Page singleton")
+  }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
+
+  const { metaTitle, metaDescription: description } = storypage
+
+  const title = `${metaTitle} | ${config.siteTitle}`
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+    },
+    twitter: {
+      title,
+      description,
+    },
+    alternates: {
+      canonical: "/story",
+    },
+  }
+}
+
 const Story = async (): Promise<JSX.Element> => {
   const storypage = await reader.singletons.storypage.read({
     resolveLinkedFiles: true,
