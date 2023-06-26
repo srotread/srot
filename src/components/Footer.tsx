@@ -1,18 +1,27 @@
 import Link from "next/link"
+
 import Button from "./Button"
 import Facebook from "./Icons/Facebook"
 import Instagram from "./Icons/Instagram"
 
-export default function Footer() {
+import reader from "@/lib/keystatic"
+import { KeystaticContentNotFoundError } from "@/lib/exceptions"
+
+export default async function Footer() {
+  const settings = await reader.singletons.config.read()
+
+  if (!settings) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
+
+  const { address, email, numbers, instagram, facebook } = settings
+
   return (
-    <footer className="flex flex-col bg-dark px-col-outer pt-32 pb-24 text-lg text-light ">
-      <div className="mb-24 flex flex-col flex-wrap items-center justify-between gap-12 text-center md:flex-row md:items-start md:text-start">
+    <footer className="flex flex-col bg-dark px-col-outer pt-32 space-y-24 pb-24 text-lg text-light ">
+      <div className="flex flex-col flex-wrap items-center justify-between gap-12 text-center md:flex-row md:items-start md:text-start">
         <div>
           <h6 className="mb-6 text-xl">Regd. Address</h6>
-          <address className="w-[25ch] font-light">
-            FL-A-802, The Latitude, New Heaven Park-II, SN-18, HN-6, Kondhwa,
-            NIBM road, Pune 411048
-          </address>
+          <address className="w-[25ch] font-light">{address}</address>
         </div>
 
         <div>
@@ -21,23 +30,23 @@ export default function Footer() {
             href="mailto:info@thesrotfoundation.org"
             className="mb-1 inline-block text-accent hover:underline"
           >
-            info@thesrotfoundation.org
+            {email}
           </a>
-          <p>+91 9823050570 / +91 8208061771</p>
+          <p>{numbers}</p>
         </div>
 
         <div>
           <h6 className="mb-6 text-xl">Socials</h6>
           <div className="flex gap-2">
             <Link
-              href="https://ig.me/srotread"
+              href={instagram}
               target="_blank"
               className="h-12 w-12 text-accent transition-all hover:text-light"
             >
               <Instagram />
             </Link>
             <Link
-              href="https://fb.me/srotread"
+              href={facebook}
               target="_blank"
               className="h-12 w-12 text-accent transition-all hover:text-light"
             >
@@ -85,26 +94,30 @@ export default function Footer() {
 
       <div className="flex flex-col items-center justify-center gap-4 text-base md:flex-row md:gap-4 md:text-lg">
         <Link
-          href="/"
+          href="/privacy-policy"
           className="text-accent underline transition-all hover:text-light"
         >
           Privacy Policy
         </Link>
         <span className="hidden md:inline-block">|</span>
         <Link
-          href="/"
+          href="/terms-of-service"
           className="text-accent underline transition-all hover:text-light"
         >
           Terms of Service
         </Link>
         <span className="hidden md:inline-block">|</span>
         <Link
-          href="/"
+          href="/refund-policy"
           className="text-accent underline transition-all hover:text-light"
         >
           Refund Policy
         </Link>
       </div>
+
+      <p className="text-base md:flex-row md:gap-4 md:text-lg block text-center">
+        Built with ❤️ by <Link href="/">Neesh Samsi</Link>
+      </p>
     </footer>
   )
 }

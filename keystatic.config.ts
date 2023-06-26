@@ -43,6 +43,41 @@ export default config({
             length: { min: 1 },
           },
         }),
+        address: fields.text({
+          label: "Address - Footer",
+          description: "The Regd. Address in the Footer.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        email: fields.text({
+          label: "Email - Footer",
+          description: "The email address in the Footer.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        numbers: fields.text({
+          label: "Phone numbers - Footer",
+          description: "The phone numbers in the Footer",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        instagram: fields.url({
+          label: "Instagram URL",
+          // description: "",
+          validation: {
+            isRequired: true,
+          },
+        }),
+        facebook: fields.url({
+          label: "Facebook URL",
+          // description: "",
+          validation: {
+            isRequired: true,
+          },
+        }),
       },
     }),
 
