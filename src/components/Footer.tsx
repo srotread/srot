@@ -116,7 +116,10 @@ export default async function Footer() {
       </div>
 
       <p className="text-base md:flex-row md:gap-4 md:text-lg block text-center">
-        Built with ❤️ by <Link href="/">Neesh Samsi</Link>
+        Built with ❤️ by{" "}
+        <Link href="/" className="pl-2 text-accent">
+          Neesh Samsi
+        </Link>
       </p>
     </footer>
   )
