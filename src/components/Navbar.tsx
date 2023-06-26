@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import Button from "./Button"
+import MobileNavElements from "./MobileNavElements"
 import NavLink from "./NavLink"
 
 const { pages } = config
@@ -44,6 +45,8 @@ export default async function Navbar() {
             <Button text="Support Us" type="Primary" theme="Light" />
           </Link>
         </div>
+
+        <MobileNavElements pages={pages} />
       </nav>
     </>
   )
