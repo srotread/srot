@@ -72,7 +72,11 @@ const Story = async (): Promise<JSX.Element> => {
 
           <div className="xl:w-[60ch]">
             <div className="relative mt-10 block aspect-[4/3] xl:hidden">
-              <ImageWithBorder src={image} alt={imageAlt} />
+              <ImageWithBorder
+                src={image}
+                alt={imageAlt}
+                sizes="100vw, (min-width: 1024px) 60vw"
+              />
             </div>
             <p className="mt-9 text-2xl 2xl:mt-16 2xl:text-3xl">
               <span className="font-bold text-accent">Srot</span> means
@@ -90,11 +94,11 @@ const Story = async (): Promise<JSX.Element> => {
         </div>
 
         <div className="relative mr-2 hidden aspect-[4/3] w-1/2 xl:block">
-          <ImageWithBorder src={image} alt={imageAlt} />
+          <ImageWithBorder src={image} alt={imageAlt} priority sizes="40vw" />
         </div>
       </main>
 
-      <section className="flex flex-col gap-24 bg-light py-16 text-dark lg:py-36 px-col-inner xl:px-0 4xl:px-col-inner">
+      <section className="flex flex-col gap-24 bg-light py-16 text-dark lg:py-36 px-col-outer lg:px-col-inner xl:px-0 4xl:px-col-inner">
         {contentSections.map(({ title, content, image, imageAlt }, i) => {
           const isOdd = i % 2 === 0
 
@@ -107,10 +111,14 @@ const Story = async (): Promise<JSX.Element> => {
               </h3>
 
               <div className="relative block aspect-[4/3]  xl:hidden">
-                <ImageWithBorder src={image} alt={imageAlt} />
+                <ImageWithBorder
+                  src={image}
+                  alt={imageAlt}
+                  sizes="100vw, (min-width: 768px) 70vw, (min-width: 1024px) 50vw"
+                />
               </div>
 
-              <div className="prose prose-lg 3xl:prose-xl marker:text-dark">
+              <div className="prose prose-lg 3xl:prose-xl marker:text-dark mt-9 xl:mt-0">
                 <DocumentRenderer document={content} />
               </div>
             </div>
@@ -119,7 +127,11 @@ const Story = async (): Promise<JSX.Element> => {
             <div
               className={`relative hidden aspect-[4/3] w-full xl:block ${classes}`}
             >
-              <ImageWithBorder src={image} alt={imageAlt} />
+              <ImageWithBorder
+                src={image}
+                alt={imageAlt}
+                sizes="100vw, (min-width: 768px) 70vw, (min-width: 1024px) 50vw"
+              />
             </div>
           )
 

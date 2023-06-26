@@ -77,7 +77,7 @@ const Centres = async (): Promise<JSX.Element> => {
         </p>
       </main>
 
-      <section className="flex flex-col gap-24 bg-light py-16 text-dark lg:py-36 px-col-inner xl:px-0 3xl:px-col-inner">
+      <section className="flex flex-col gap-24 bg-light py-16 text-dark lg:py-36 px-col-outer lg:px-col-inner xl:px-0 3xl:px-col-inner">
         {centres.map(({ slug, entry }, i) => {
           const { name, description, image, imageAlt } = entry
 
@@ -92,7 +92,11 @@ const Centres = async (): Promise<JSX.Element> => {
               </h3>
 
               <div className="relative block aspect-[4/3]  xl:hidden">
-                <ImageWithBorder src={image} alt={imageAlt} />
+                <ImageWithBorder
+                  src={image}
+                  alt={imageAlt}
+                  sizes="80vw, (min-width: 768px) 70vw, (min-width: 1024px) 50vw"
+                />
               </div>
 
               <p className="text-lg 3xl:text-xl mt-9 leading-8">
@@ -113,7 +117,11 @@ const Centres = async (): Promise<JSX.Element> => {
             <div
               className={`relative hidden aspect-[4/3] w-full xl:block ${classes}`}
             >
-              <ImageWithBorder src={image} alt={imageAlt} />
+              <ImageWithBorder
+                src={image}
+                alt={imageAlt}
+                sizes="80vw, (min-width: 768px) 70vw, (min-width: 1024px) 50vw"
+              />
             </div>
           )
 

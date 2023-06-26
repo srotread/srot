@@ -80,7 +80,11 @@ const Home = async (): Promise<JSX.Element> => {
           </h3>
 
           <div className="relative block aspect-[4/3] 2xl:hidden">
-            <ImageWithBorder src={storyImage} alt={storyImageAlt} />
+            <ImageWithBorder
+              src={storyImage}
+              alt={storyImageAlt}
+              sizes="100vw, (min-width: 1024px) 60vw"
+            />
           </div>
 
           <div className="prose prose-invert prose-lg text-light marker:text-light mt-9">
@@ -98,7 +102,7 @@ const Home = async (): Promise<JSX.Element> => {
         </div>
 
         <div className="relative mr-2 hidden aspect-[4/3] w-1/2 2xl:block">
-          <ImageWithBorder src={storyImage} alt={storyImageAlt} />
+          <ImageWithBorder src={storyImage} alt={storyImageAlt} sizes="50vw" />
         </div>
       </section>
 
