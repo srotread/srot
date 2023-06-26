@@ -9,10 +9,87 @@ export default config({
     },
   },
   singletons: {
+    config: singleton({
+      label: "Site Settings",
+      path: "src/data/config",
+      schema: {
+        logo: fields.image({
+          label: "Logo",
+          description:
+            "The Srot Logo file. This will be displayed in the Navigation Menu so choose a Horizontal or Square file.",
+          validation: {
+            isRequired: true,
+          },
+          directory: "/public/images/config",
+          publicPath: "/images/config",
+        }),
+        url: fields.text({
+          label: "Site URL",
+          description: "This will be used to construct metadata for the site.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        twitter: fields.text({
+          label: "Twitter Username",
+          description:
+            "This is not necessary but it will be shown if the site is shared on Twitter.",
+        }),
+        siteTitle: fields.text({
+          label: "Site Title",
+          description:
+            "This will be appended to the metadata title specified on each page (For example if Page title is 'Home' & this one is 'Srot', the title will be 'Home | Srot').",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        pages: fields.array(
+          fields.object({
+            name: fields.text({
+              label: "Name",
+              description: "Page name.",
+              validation: {
+                length: { min: 1 },
+              },
+            }),
+            path: fields.text({
+              label: "Path",
+              description: "Relative path to the page (For example: '/link').",
+              validation: {
+                length: { min: 1 },
+              },
+            }),
+          }),
+          {
+            label: "Navigation pages",
+            description:
+              "All pages on the site. This is used to display the Navigation menu links.",
+            itemLabel: (props) => props.fields.name.value,
+          }
+        ),
+      },
+    }),
+
     homepage: singleton({
       label: "Home Page",
       path: "src/data/pages/home",
       schema: {
+        metaTitle: fields.text({
+          label: "Metadata Title",
+          description:
+            "This is the metadata title of the site. It will be prepended to the Site Title in Site Settings. It will be displayed when this page is shared, in the browser tab and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        metaDescription: fields.text({
+          label: "Metadata Description",
+          description:
+            "This is the metadata description of the site. It will be displayed when this site is shared and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
         headline: fields.text({
           label: "Headline - Main section",
           description:
@@ -45,7 +122,6 @@ export default config({
             length: { min: 1 },
           },
         }),
-
         storyDescription: fields.document({
           label: "Content - Story section",
           description:
@@ -97,6 +173,22 @@ export default config({
       label: "Story Page",
       path: "src/data/pages/story",
       schema: {
+        metaTitle: fields.text({
+          label: "Metadata Title",
+          description:
+            "This is the metadata title of the site. It will be prepended to the Site Title in Site Settings. It will be displayed when this page is shared, in the browser tab and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        metaDescription: fields.text({
+          label: "Metadata Description",
+          description:
+            "This is the metadata description of the site. It will be displayed when this site is shared and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
         headline: fields.text({
           label: "Headline - Main section",
           description:
@@ -105,22 +197,24 @@ export default config({
             length: { min: 1 },
           },
         }),
-        description: fields.array(fields.text({
-          label: "Paragraph",
-          description:
-            "Paragraph of the description.",
-          validation: {
-            length: { min: 1 },
-          },
-        }), {
-            label: "Description paragraphs",
-            description:
-              "Shows under Story Headline & Srot means Source.",
-            itemLabel: (props) => props.value,
+        description: fields.array(
+          fields.text({
+            label: "Paragraph",
+            description: "Paragraph of the description.",
+            validation: {
+              length: { min: 1 },
+            },
           }),
+          {
+            label: "Description paragraphs",
+            description: "Shows under Story Headline & Srot means Source.",
+            itemLabel: (props) => props.value,
+          }
+        ),
         image: fields.image({
           label: "Image - Main section",
-          description: "Image that shows side by side with the Headline & description.",
+          description:
+            "Image that shows side by side with the Headline & description.",
           validation: {
             isRequired: true,
           },
