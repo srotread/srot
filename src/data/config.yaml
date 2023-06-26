@@ -1,22 +1,3 @@
 logo: /images/config/logo.png
 url: https://srot.vercel.app
 siteTitle: Srot
-pages:
-  - name: Home
-    path: /
-  - name: Our Story
-    path: /story
-  - name: Projects
-    path: /projects
-  - name: Workshops
-    path: /workshops
-  - name: Centres
-    path: /centres
-  - name: Media
-    path: /media
-  - name: Team
-    path: /team
-  - name: Work with Us
-    path: /work
-  - name: Contact Us
-    path: /contact
