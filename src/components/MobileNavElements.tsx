@@ -22,7 +22,11 @@ const MobileNavElements = ({
   return (
     <>
       {/* Hamburger Menu */}
-      <button onClick={handleHamburger} className="z-10 2xl:hidden">
+      <button
+        aria-label={isHamburgerOpen ? "Close menu" : "Open menu"}
+        onClick={handleHamburger}
+        className="z-10 2xl:hidden"
+      >
         <div
           className={`tham ${
             isHamburgerOpen && "tham-active"
