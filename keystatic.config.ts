@@ -43,30 +43,6 @@ export default config({
             length: { min: 1 },
           },
         }),
-        pages: fields.array(
-          fields.object({
-            name: fields.text({
-              label: "Name",
-              description: "Page name.",
-              validation: {
-                length: { min: 1 },
-              },
-            }),
-            path: fields.text({
-              label: "Path",
-              description: "Relative path to the page (For example: '/link').",
-              validation: {
-                length: { min: 1 },
-              },
-            }),
-          }),
-          {
-            label: "Navigation pages",
-            description:
-              "All pages on the site. This is used to display the Navigation menu links.",
-            itemLabel: (props) => props.fields.name.value,
-          }
-        ),
       },
     }),
 
