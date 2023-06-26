@@ -358,6 +358,44 @@ export default config({
         }),
       },
     }),
+
+    centrespage: singleton({
+      label: "Centres Page",
+      path: "src/data/pages/centres",
+      schema: {
+        metaTitle: fields.text({
+          label: "Metadata Title",
+          description:
+            "This is the metadata title of the site. It will be prepended to the Site Title in Site Settings. It will be displayed when this page is shared, in the browser tab and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        metaDescription: fields.text({
+          label: "Metadata Description",
+          description:
+            "This is the metadata description of the site. It will be displayed when this site is shared and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        headline: fields.text({
+          label: "Headline",
+          description:
+            "The main underlined headline shown in the main section.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        subheadline: fields.text({
+          label: "Sub headline",
+          description: "The sub headline shown under the main headline.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+      },
+    }),
   },
 
   collections: {
@@ -439,6 +477,49 @@ export default config({
           },
           directory: "/public/images/workshops/",
           publicPath: "/images/workshops/",
+        }),
+        imageAlt: fields.text({
+          label: "Image Alternate Text",
+          description:
+            "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+      },
+    }),
+
+    centres: collection({
+      label: "Centres",
+      path: "src/data/centres/*",
+      slugField: "name",
+      schema: {
+        name: fields.slug({
+          name: {
+            label: "Name",
+            description: "Name of this Centres.",
+          },
+          slug: {
+            label: "Slug",
+            description: "A unique url safe identifier for this centre.",
+          },
+        }),
+        description: fields.text({
+          label: "Description",
+          description: "Displayed in the Centre Cards.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        image: fields.image({
+          label: "Image",
+          description:
+            "Displayed in the Centre Card & prominently on the Centre's page.",
+          validation: {
+            isRequired: true,
+          },
+          directory: "/public/images/centres/",
+          publicPath: "/images/centres/",
         }),
         imageAlt: fields.text({
           label: "Image Alternate Text",

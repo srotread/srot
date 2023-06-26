@@ -1,25 +1,144 @@
 import type { NextPage } from "next"
+
 import ImageWithBorder from "@/components/ImageWithBorder"
 import Button from "@/components/Button"
 import RightArrow from "@/components/Icons/RightArrow"
 
-const Centres: NextPage = () => {
+import { DocumentRenderer } from "@keystatic/core/renderer"
+import reader from "@/lib/keystatic"
+import { KeystaticContentNotFoundError } from "@/lib/exceptions"
+
+async function getPageData() {
+  const centrespage = await reader.singletons.centrespage.read()
+  const config = await reader.singletons.config.read()
+  const centres = await reader.collections.centres.all({
+    resolveLinkedFiles: true,
+  })
+
+  if (!centrespage) {
+    throw new KeystaticContentNotFoundError("Story Page singleton")
+  }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
+  if (!centres) {
+    throw new KeystaticContentNotFoundError("Centres Collection")
+  }
+
+  const { siteTitle } = config
+
+  const { metaTitle, metaDescription, headline, subheadline } = centrespage
+
+  return {
+    meta: {
+      title: `${metaTitle} | ${siteTitle}`,
+      description: metaDescription,
+    },
+    page: {
+      headline,
+      subheadline,
+      centres,
+    },
+  }
+}
+
+export async function generateMetadata() {
+  const { title, description } = (await getPageData()).meta
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+    },
+    twitter: {
+      title,
+      description,
+    },
+    alternates: {
+      canonical: "/centres",
+    },
+  }
+}
+
+const Centres = async (): Promise<JSX.Element> => {
+  const { headline, subheadline, centres } = (await getPageData()).page
+
   return (
     <>
-      <header className="bg-dark px-col-outer py-16 text-light lg:px-col-inner lg:py-36">
+      <main className="bg-dark px-col-outer py-16 text-light lg:px-col-inner lg:py-36">
         <h1 className="text-4xl font-bold underline decoration-accent md:text-5xl 2xl:text-6xl 3xl:text-7xl">
-          Our Centres
+          {headline}
         </h1>
 
         <p className="mt-9 w-[50ch] text-lg 2xl:mt-16 2xl:text-xl 3xl:text-2xl">
-          The Centre is a quiet and comfortable space. Children come over each
-          day, or as planned, to study and play. From time to time volunteers
-          also join in the work. The overall atmosphere is affectionate, free
-          and enriching.
+          {subheadline}
         </p>
-      </header>
+      </main>
 
-      <main className="flex flex-col gap-24 bg-light px-col-outer py-16 text-dark lg:py-36 3xl:px-0">
+      <section className="flex flex-col gap-24 bg-light py-16 text-dark lg:py-36 px-col-inner xl:px-0 3xl:px-col-inner">
+        {centres.map(({ slug, entry }, i) => {
+          const { name, description, image, imageAlt } = entry
+
+          const isOdd = i % 2 === 0
+
+          const SectionContent = ({ classes }: { classes: string }) => (
+            <div
+              className={`text-lg leading-9 sm:w-[50ch] 3xl:text-xl ${classes}`}
+            >
+              <h3 className="mb-12 text-2xl font-bold underline decoration-accent underline-offset-8 md:text-3xl 2xl:mb-14 3xl:text-4xl">
+                {name}
+              </h3>
+
+              <div className="relative block aspect-[4/3]  xl:hidden">
+                <ImageWithBorder src={image} alt={imageAlt} />
+              </div>
+
+              <p className="text-lg 3xl:text-xl mt-9 leading-8">
+                {description}
+              </p>
+
+              <div className="mt-9 text-xl 3xl:text-2xl">
+                <Button
+                  text="Learn more"
+                  theme="Light"
+                  type="Primary"
+                  icon={<RightArrow />}
+                />
+              </div>
+            </div>
+          )
+          const SectionImage = ({ classes }: { classes: string }) => (
+            <div
+              className={`relative hidden aspect-[4/3] w-full xl:block ${classes}`}
+            >
+              <ImageWithBorder src={image} alt={imageAlt} />
+            </div>
+          )
+
+          return (
+            <div
+              key={slug}
+              className="block grid-cols-2 items-center gap-28 xl:grid 3xl:gap-48"
+            >
+              {isOdd ? (
+                <>
+                  <SectionContent classes="xl:ml-auto" />
+                  <SectionImage classes="mr-2" />
+                </>
+              ) : (
+                <>
+                  <SectionImage classes="ml-2" />
+                  <SectionContent classes="xl:mr-auto" />
+                </>
+              )}
+            </div>
+          )
+        })}
+      </section>
+
+      {/* <main className="flex flex-col gap-24 bg-light px-col-outer py-16 text-dark lg:py-36 3xl:px-0">
         <div className="block grid-cols-2 items-center gap-28 xl:grid 3xl:gap-48">
           <div className="text-lg leading-9 sm:w-[50ch] 2xl:ml-auto 3xl:text-xl">
             <h3 className="mb-12 text-2xl font-bold underline decoration-accent underline-offset-8 md:text-3xl 2xl:mb-14 3xl:text-4xl">
@@ -86,7 +205,7 @@ const Centres: NextPage = () => {
             </div>
           </div>
         </div>
-      </main>
+      </main> */}
     </>
   )
 }
