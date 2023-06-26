@@ -72,10 +72,7 @@ const Home = async (): Promise<JSX.Element> => {
         </div>
       </main>
 
-      <section
-        role="About Srot"
-        className="flex items-center justify-between gap-12 bg-dark px-col-outer text-light lg:pl-col-inner lg:pr-col-inner 2xl:pr-0"
-      >
+      <section className="flex items-center justify-between gap-12 bg-dark px-col-outer text-light lg:pl-col-inner lg:pr-col-inner 2xl:pr-0">
         <div className="w-[60ch] py-16 text-lg leading-9 lg:py-36 3xl:text-2xl">
           <h3 className="mb-6 text-[32px] font-medium md:text-4xl 2xl:mb-14 3xl:text-5xl">
             <span className="font-bold text-accent">&lsquo;Srot&rsquo; </span>
@@ -105,10 +102,7 @@ const Home = async (): Promise<JSX.Element> => {
         </div>
       </section>
 
-      <section
-        role="Srot's Projects"
-        className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36"
-      >
+      <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36">
         <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
           <div>
             <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
@@ -158,10 +152,7 @@ const Home = async (): Promise<JSX.Element> => {
         </Link>
       </section>
 
-      <section
-        role="Srot's Workshops"
-        className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36"
-      >
+      <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36">
         <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
           <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
             {workshopsHeadline}
@@ -207,10 +198,7 @@ const Home = async (): Promise<JSX.Element> => {
         </Link>
       </section>
 
-      <section
-        role="Srot's Funding Goals"
-        className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36"
-      >
+      <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36">
         <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
           <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
             Funding Goals

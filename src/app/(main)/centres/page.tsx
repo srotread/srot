@@ -19,10 +19,7 @@ const Centres: NextPage = () => {
         </p>
       </header>
 
-      <main
-        role="About Srot"
-        className="flex flex-col gap-24 bg-light px-col-outer py-16 text-dark lg:py-36 3xl:px-0"
-      >
+      <main className="flex flex-col gap-24 bg-light px-col-outer py-16 text-dark lg:py-36 3xl:px-0">
         <div className="block grid-cols-2 items-center gap-28 xl:grid 3xl:gap-48">
           <div className="text-lg leading-9 sm:w-[50ch] 2xl:ml-auto 3xl:text-xl">
             <h3 className="mb-12 text-2xl font-bold underline decoration-accent underline-offset-8 md:text-3xl 2xl:mb-14 3xl:text-4xl">

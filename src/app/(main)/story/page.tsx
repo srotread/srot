@@ -94,10 +94,7 @@ const Story = async (): Promise<JSX.Element> => {
         </div>
       </main>
 
-      <section
-        role="About Srot"
-        className="flex flex-col gap-24 bg-light py-16 text-dark lg:py-36 px-col-inner xl:px-0 4xl:px-col-inner"
-      >
+      <section className="flex flex-col gap-24 bg-light py-16 text-dark lg:py-36 px-col-inner xl:px-0 4xl:px-col-inner">
         {contentSections.map(({ title, content, image, imageAlt }, i) => {
           const isOdd = i % 2 === 0
 
