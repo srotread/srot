@@ -5,8 +5,10 @@ import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 
 import ImageWithBorder from "@/components/ImageWithBorder"
 
-export async function generateMetadata() {
-  const storypage = await reader.singletons.storypage.read()
+async function getPageData() {
+  const storypage = await reader.singletons.storypage.read({
+    resolveLinkedFiles: true,
+  })
   const config = await reader.singletons.config.read()
 
   if (!storypage) {
@@ -16,9 +18,27 @@ export async function generateMetadata() {
     throw new KeystaticContentNotFoundError("Site Settings")
   }
 
-  const { metaTitle, metaDescription: description } = storypage
+  const { metaTitle, metaDescription } = storypage
 
-  const title = `${metaTitle} | ${config.siteTitle}`
+  const { headline, description, image, imageAlt, contentSections } = storypage
+
+  return {
+    meta: {
+      title: `${metaTitle} | ${config.siteTitle}`,
+      description: metaDescription,
+    },
+    page: {
+      headline,
+      description,
+      image,
+      imageAlt,
+      contentSections,
+    },
+  }
+}
+
+export async function generateMetadata() {
+  const { title, description } = (await getPageData()).meta
 
   return {
     title,
@@ -38,15 +58,9 @@ export async function generateMetadata() {
 }
 
 const Story = async (): Promise<JSX.Element> => {
-  const storypage = await reader.singletons.storypage.read({
-    resolveLinkedFiles: true,
-  })
-
-  if (!storypage) {
-    throw new KeystaticContentNotFoundError("Story Page singleton")
-  }
-
-  const { headline, description, image, imageAlt, contentSections } = storypage
+  const { headline, description, image, imageAlt, contentSections } = (
+    await getPageData()
+  ).page
 
   return (
     <>
