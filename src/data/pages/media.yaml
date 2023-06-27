@@ -9,6 +9,13 @@ newsandevents:
     caption: Test caption
   - image: /images/media/newsandevents/2/image.png
     imageAlt: Image 3
-workshops: []
+workshops:
+  - image: /images/media/workshops/0/image.png
+    imageAlt: Image 1
+  - image: /images/media/workshops/1/image.png
+    imageAlt: Image 2
+  - image: /images/media/workshops/2/image.png
+    imageAlt: Image 3
+    caption: Test caption
 daytoday: []
 excursionsandfieldtrips: []
