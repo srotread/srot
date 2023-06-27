@@ -17,5 +17,14 @@ workshops:
   - image: /images/media/workshops/2/image.png
     imageAlt: Image 3
     caption: Test caption
-daytoday: []
-excursionsandfieldtrips: []
+daytoday:
+  - image: /images/media/daytoday/0/image.png
+    imageAlt: Image 1
+    caption: Test caption
+  - image: /images/media/daytoday/1/image.png
+    imageAlt: Image 2
+  - image: /images/media/daytoday/2/image.png
+    imageAlt: Image 3
+excursionsandfieldtrips:
+  - image: /images/media/excursionsandfieldtrips/0/image.png
+    imageAlt: Image 1
