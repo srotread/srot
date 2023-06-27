@@ -1,4 +1,14 @@
 metaTitle: Media
 metaDescription: Something
 headline: Srot Media
-newsandevents: []
+newsandevents:
+  - image: /images/media/newsandevents/0/image.png
+    imageAlt: Image 1
+  - image: /images/media/newsandevents/1/image.png
+    imageAlt: Image 2
+    caption: Test caption
+  - image: /images/media/newsandevents/2/image.png
+    imageAlt: Image 3
+workshops: []
+daytoday: []
+excursionsandfieldtrips: []
