@@ -28,3 +28,9 @@ daytoday:
 excursionsandfieldtrips:
   - image: /images/media/excursionsandfieldtrips/0/image.png
     imageAlt: Image 1
+  - image: /images/media/excursionsandfieldtrips/1/image.png
+    imageAlt: Image 2
+  - image: /images/media/excursionsandfieldtrips/2/image.png
+    imageAlt: Image 3
+  - image: /images/media/excursionsandfieldtrips/3/image.png
+    imageAlt: Image 4
