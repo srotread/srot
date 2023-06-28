@@ -32,3 +32,11 @@ gallerySections:
         imageAlt: Image 2
       - image: /images/media/gallerySections/2/images/2/image.png
         imageAlt: Image 3
+  - title: Excursions & Field Trips
+    images:
+      - image: /images/media/gallerySections/3/images/0/image.png
+        imageAlt: Image 1
+      - image: /images/media/gallerySections/3/images/1/image.png
+        imageAlt: Image 2
+      - image: /images/media/gallerySections/3/images/2/image.png
+        imageAlt: Image 3
