@@ -14,3 +14,13 @@ gallerySections:
         imageAlt: Image 3
       - image: /images/media/gallerySections/0/images/3/image.png
         imageAlt: Image 4
+  - title: Workshops
+    description: Section about workshops and stuff
+    images:
+      - image: /images/media/gallerySections/1/images/0/image.png
+        imageAlt: Image 1
+      - image: /images/media/gallerySections/1/images/1/image.png
+        imageAlt: Image 2
+        caption: Test caption2
+      - image: /images/media/gallerySections/1/images/2/image.png
+        imageAlt: Image 3
