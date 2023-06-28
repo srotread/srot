@@ -9,13 +9,8 @@ async function getPageData() {
   const storypage = await reader.singletons.storypage.read({
     resolveLinkedFiles: true,
   })
-  const config = await reader.singletons.config.read()
-
   if (!storypage) {
     throw new KeystaticContentNotFoundError("Story Page singleton")
-  }
-  if (!config) {
-    throw new KeystaticContentNotFoundError("Site Settings")
   }
 
   const { metaTitle, metaDescription } = storypage
@@ -24,7 +19,7 @@ async function getPageData() {
 
   return {
     meta: {
-      title: `${metaTitle} | ${config.siteTitle}`,
+      title: `${metaTitle} | `,
       description: metaDescription,
     },
     page: {

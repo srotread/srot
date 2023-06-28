@@ -4,15 +4,11 @@ import reader from "@/lib/keystatic"
 import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 
 async function getPageData() {
-  const config = await reader.singletons.config.read()
   const workshopspage = await reader.singletons.workshopspage.read({
     resolveLinkedFiles: true,
   })
   const workshops = await reader.collections.workshops.all()
 
-  if (!config) {
-    throw new KeystaticContentNotFoundError("Site Settings")
-  }
   if (!workshopspage) {
     throw new KeystaticContentNotFoundError("Workshops Page singleton")
   }
@@ -24,7 +20,7 @@ async function getPageData() {
 
   return {
     meta: {
-      title: `${metaTitle} | ${config.siteTitle}`,
+      title: `${metaTitle} | `,
       description: metaDescription,
     },
     page: {

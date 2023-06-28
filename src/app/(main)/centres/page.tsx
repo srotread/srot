@@ -1,10 +1,7 @@
-import type { NextPage } from "next"
-
 import ImageWithBorder from "@/components/ImageWithBorder"
 import Button from "@/components/Button"
 import RightArrow from "@/components/Icons/RightArrow"
 
-import { DocumentRenderer } from "@keystatic/core/renderer"
 import reader from "@/lib/keystatic"
 import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 
@@ -31,7 +28,7 @@ async function getPageData() {
 
   return {
     meta: {
-      title: `${metaTitle} | ${siteTitle}`,
+      title: `${metaTitle} | `,
       description: metaDescription,
     },
     page: {
