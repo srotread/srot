@@ -24,3 +24,11 @@ gallerySections:
         caption: Test caption2
       - image: /images/media/gallerySections/1/images/2/image.png
         imageAlt: Image 3
+  - title: Day to Day Activities
+    images:
+      - image: /images/media/gallerySections/2/images/0/image.png
+        imageAlt: Image 1
+      - image: /images/media/gallerySections/2/images/1/image.png
+        imageAlt: Image 2
+      - image: /images/media/gallerySections/2/images/2/image.png
+        imageAlt: Image 3
