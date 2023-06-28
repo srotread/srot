@@ -61,3 +61,32 @@ teamSections:
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book.
+  - designation: Associate Partners
+    members:
+      - image: /images/team/teamSections/2/members/0/image.png
+        imageAlt: Something
+        name: Associate Partner's Name
+        title: Associate Partner's Title
+        description: >-
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+      - image: /images/team/teamSections/2/members/1/image.png
+        imageAlt: Something
+        name: Associate Partner's Name
+        title: Associate Partner's Title
+        description: >-
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+      - image: /images/team/teamSections/2/members/2/image.png
+        imageAlt: Something
+        name: Associate Partner's Name
+        title: 'Associate Partner''s Title '
+        description: >-
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
