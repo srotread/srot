@@ -1,5 +1,3 @@
-import type { FC } from "react"
-
 import Link from "next/link"
 import ImageWithBorder from "@/components/ImageWithBorder"
 import Button from "@/components/Button"
