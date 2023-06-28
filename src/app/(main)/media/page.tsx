@@ -7,16 +7,10 @@ async function getPageData() {
   const mediapage = await reader.singletons.mediapage.read({
     resolveLinkedFiles: true,
   })
-  const config = await reader.singletons.config.read()
 
   if (!mediapage) {
     throw new KeystaticContentNotFoundError("Media Page singleton")
   }
-  if (!config) {
-    throw new KeystaticContentNotFoundError("Site Settings")
-  }
-
-  const { siteTitle } = config
 
   const { metaTitle, metaDescription, headline, gallerySections } = mediapage
 
@@ -47,7 +41,7 @@ export async function generateMetadata() {
       description,
     },
     alternates: {
-      canonical: "/centres",
+      canonical: "/media",
     },
   }
 }
@@ -67,7 +61,9 @@ const Media = async (): Promise<JSX.Element> => {
             {title}
           </h3>
 
-          <p className="mt-4 text-lg leading-8 3xl:text-xl">{description}</p>
+          {description && (
+            <p className="mt-4 text-lg leading-8 3xl:text-xl">{description}</p>
+          )}
 
           <div className="mt-9 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2 2xl:grid-cols-3 4xl:max-w-screen-2xl">
             {images.map(({ image, imageAlt, caption }, i) => (
