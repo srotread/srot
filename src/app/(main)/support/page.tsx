@@ -14,7 +14,11 @@ const Support: FC = () => {
 
           <div className="xl:w-[60ch]">
             <div className="relative mt-10 block aspect-[4/3] xl:hidden">
-              <ImageWithBorder src="/hero.png" alt="Story page hero img" />
+              <ImageWithBorder
+                src="/hero.png"
+                alt="Story page hero img"
+                sizes=""
+              />
             </div>
             <div className="mt-9 grid grid-cols-3 text-base font-extralight sm:text-xl lg:text-2xl 2xl:mt-16 2xl:text-3xl">
               <div className="flex flex-col">
@@ -53,7 +57,7 @@ const Support: FC = () => {
         </div>
 
         <div className="relative mr-2 hidden aspect-[4/3] w-1/2 xl:block">
-          <ImageWithBorder src="/hero.png" alt="Test" />
+          <ImageWithBorder src="/hero.png" alt="Test" sizes="" />
         </div>
       </main>
     </>
