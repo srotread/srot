@@ -4,6 +4,8 @@ headline: Work with Us
 subheadline: >-
   If you find our work interesting and wish to work with us, here are a few ways
   you can get involved:
+image: /images/work/image.png
+imageAlt: Something
 involvedHeadline: How to get involved
 involvements:
   - title: Become an Associate Partner
