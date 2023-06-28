@@ -396,6 +396,84 @@ export default config({
         }),
       },
     }),
+
+    mediapage: singleton({
+      label: "Media Page",
+      path: "src/data/pages/media",
+      schema: {
+        metaTitle: fields.text({
+          label: "Metadata Title",
+          description:
+            "This is the metadata title of the site. It will be prepended to the Site Title in Site Settings. It will be displayed when this page is shared, in the browser tab and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        metaDescription: fields.text({
+          label: "Metadata Description",
+          description:
+            "This is the metadata description of the site. It will be displayed when this site is shared and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        headline: fields.text({
+          label: "Headline",
+          description:
+            "The main underlined headline shown in the main section.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        gallerySections: fields.array(
+          fields.object({
+            title: fields.text({
+              label: "Section Title",
+              validation: {
+                length: { min: 1 },
+              },
+            }),
+            description: fields.text({
+              label: "Section Description",
+              description:
+                "This is optional. Displayed in a paragraph under the Section headline.",
+            }),
+            images: fields.array(
+              fields.object({
+                image: fields.image({
+                  label: "Image",
+                  validation: {
+                    isRequired: true,
+                  },
+                  directory: "/public/images/media/",
+                  publicPath: "/images/media/",
+                }),
+                imageAlt: fields.text({
+                  label: "Image Alternate Text",
+                  description:
+                    "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+                  validation: {
+                    length: { min: 1 },
+                  },
+                }),
+                caption: fields.text({
+                  label: "Image Caption",
+                  description: "This is optional. Displayed under the image",
+                }),
+              }),
+              {
+                label: "Section Images",
+                itemLabel: (props) => props.fields.imageAlt.value,
+              }
+            ),
+          }),
+          {
+            label: "Gallery Sections",
+            itemLabel: (props) => props.fields.title.value,
+          }
+        ),
+      },
+    }),
   },
 
   collections: {

@@ -1,104 +1,92 @@
-import type { FC } from "react"
 import ImageWithBorder from "@/components/ImageWithBorder"
 
-const Media: FC = () => {
+import reader from "@/lib/keystatic"
+import { KeystaticContentNotFoundError } from "@/lib/exceptions"
+
+async function getPageData() {
+  const mediapage = await reader.singletons.mediapage.read({
+    resolveLinkedFiles: true,
+  })
+  const config = await reader.singletons.config.read()
+
+  if (!mediapage) {
+    throw new KeystaticContentNotFoundError("Media Page singleton")
+  }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
+
+  const { siteTitle } = config
+
+  const { metaTitle, metaDescription, headline, gallerySections } = mediapage
+
+  return {
+    meta: {
+      title: `${metaTitle} | `,
+      description: metaDescription,
+    },
+    page: {
+      headline,
+      gallerySections,
+    },
+  }
+}
+
+export async function generateMetadata() {
+  const { title, description } = (await getPageData()).meta
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+    },
+    twitter: {
+      title,
+      description,
+    },
+    alternates: {
+      canonical: "/centres",
+    },
+  }
+}
+
+const Media = async (): Promise<JSX.Element> => {
+  const { headline, gallerySections } = (await getPageData()).page
+
   return (
     <main className="bg-dark px-col-outer py-16 text-light lg:px-col-inner lg:py-36">
       <h1 className="text-4xl font-bold underline decoration-accent md:text-5xl 2xl:text-6xl 3xl:text-7xl">
-        Srot Media
+        {headline}
       </h1>
 
-      <section>
-        <h3 className="mt-12 text-[32px] font-medium md:text-4xl 2xl:mt-24 3xl:text-5xl">
-          News & Events
-        </h3>
+      {gallerySections.map(({ title, description, images }) => (
+        <section key={title}>
+          <h3 className="mt-12 text-[32px] font-medium md:text-4xl 2xl:mt-24 3xl:text-5xl">
+            {title}
+          </h3>
 
-        <p className="mt-6 text-lg leading-8 3xl:text-xl">
-          Description for the above headline.
-        </p>
+          <p className="mt-4 text-lg leading-8 3xl:text-xl">{description}</p>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2 2xl:grid-cols-3">
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
+          <div className="mt-9 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2 2xl:grid-cols-3 4xl:max-w-screen-2xl">
+            {images.map(({ image, imageAlt, caption }, i) => (
+              <div key={i} className="">
+                <div className="relative w-full h-80">
+                  <ImageWithBorder
+                    src={image}
+                    alt={imageAlt}
+                    sizes="100vw, (min-width: 640px) 40vw, (min-width: 1024px) 30vw, (min-width: 1536px) 40vw"
+                  />
+                </div>
+                <p className="mt-4 text-base leading-8 3xl:text-lg">
+                  {caption}
+                </p>
+              </div>
+            ))}
           </div>
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-            <p className="mt-4 text-base leading-8 3xl:text-lg">
-              Optional caption for above media.
-            </p>
-          </div>
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-          </div>
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-          </div>
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-          </div>
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3 className="mt-12 text-[32px] font-medium md:text-4xl 2xl:mt-24 3xl:text-5xl">
-          News & Events
-        </h3>
-
-        <p className="mt-6 text-lg leading-8 3xl:text-xl">
-          Description for the above headline.
-        </p>
-
-        <div className="mt-6 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2 2xl:grid-cols-3">
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-          </div>
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-            <p className="mt-4 text-base leading-8 3xl:text-lg">
-              Optional caption for above media.
-            </p>
-          </div>
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-          </div>
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-          </div>
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-          </div>
-          <div>
-            <div className="apsect-4/3 relative h-80 w-full">
-              <ImageWithBorder src="/hero.png" alt="alt" />
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
     </main>
   )
 }
