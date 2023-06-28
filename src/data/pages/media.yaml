@@ -1,3 +1,16 @@
 metaTitle: Media
 metaDescription: Something
 headline: Srot Media
+gallerySections:
+  - title: News & Events
+    description: Some description about news & events
+    images:
+      - image: /images/media/gallerySections/0/images/0/image.png
+        imageAlt: Image 1
+        caption: Test Caption 1
+      - image: /images/media/gallerySections/0/images/1/image.png
+        imageAlt: Image 2
+      - image: /images/media/gallerySections/0/images/2/image.png
+        imageAlt: Image 3
+      - image: /images/media/gallerySections/0/images/3/image.png
+        imageAlt: Image 4
