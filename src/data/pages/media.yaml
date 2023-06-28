@@ -32,6 +32,7 @@ gallerySections:
         imageAlt: Image 2
       - image: /images/media/gallerySections/2/images/2/image.png
         imageAlt: Image 3
+        caption: Test caption 3
   - title: Excursions & Field Trips
     images:
       - image: /images/media/gallerySections/3/images/0/image.png
