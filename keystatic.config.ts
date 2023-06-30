@@ -655,6 +655,54 @@ export default config({
         }),
       },
     }),
+
+    contactpage: singleton({
+      label: "Contact Page",
+      path: "src/data/pages/contact",
+      schema: {
+        metaTitle: fields.text({
+          label: "Metadata Title",
+          description:
+            "This is the metadata title of the site. It will be prepended to the Site Title in Site Settings. It will be displayed when this page is shared, in the browser tab and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        metaDescription: fields.text({
+          label: "Metadata Description",
+          description:
+            "This is the metadata description of the site. It will be displayed when this site is shared and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        headline: fields.text({
+          label: "Headline",
+          description:
+            "The main underlined headline shown in the main section.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        image: fields.image({
+          label: "Image",
+          description: "Displayed side by side to the main content.",
+          validation: {
+            isRequired: true,
+          },
+          directory: "/public/images/contact/",
+          publicPath: "/images/contact/",
+        }),
+        imageAlt: fields.text({
+          label: "Image Alternate Text",
+          description:
+            "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+      },
+    }),
   },
 
   collections: {
