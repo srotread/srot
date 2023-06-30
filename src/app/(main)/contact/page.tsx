@@ -11,26 +11,14 @@ async function getPageData() {
     throw new KeystaticContentNotFoundError("Work with Us Page singleton")
   }
 
-  const {
-    metaTitle,
-    metaDescription,
-    headline,
-    image,
-    imageAlt,
-    contactOptions,
-  } = contactpage
+  const { metaTitle, metaDescription, ...page } = contactpage
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
     },
-    page: {
-      headline,
-      image,
-      imageAlt,
-      contactOptions,
-    },
+    page,
   }
 }
 
@@ -55,8 +43,7 @@ export async function generateMetadata() {
 }
 
 const Contact = async (): Promise<JSX.Element> => {
-  const { headline, image, imageAlt, contactOptions } = (await getPageData())
-    .page
+  const { headline, image, imageAlt } = (await getPageData()).page
 
   return (
     <>

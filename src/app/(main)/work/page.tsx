@@ -18,17 +18,7 @@ async function getPageData() {
     throw new KeystaticContentNotFoundError("Testimonials Collection")
   }
 
-  const {
-    metaTitle,
-    metaDescription,
-    headline,
-    subheadline,
-    image,
-    imageAlt,
-    involvedHeadline,
-    involvements,
-    testimonialsHeadline,
-  } = workpage
+  const { metaTitle, metaDescription, ...page } = workpage
 
   return {
     meta: {
@@ -36,13 +26,7 @@ async function getPageData() {
       description: metaDescription,
     },
     page: {
-      headline,
-      subheadline,
-      image,
-      imageAlt,
-      involvedHeadline,
-      involvements,
-      testimonialsHeadline,
+      ...page,
       testimonials,
     },
   }

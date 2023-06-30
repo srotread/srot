@@ -13,22 +13,14 @@ async function getPageData() {
     throw new KeystaticContentNotFoundError("Story Page singleton")
   }
 
-  const { metaTitle, metaDescription } = storypage
-
-  const { headline, description, image, imageAlt, contentSections } = storypage
+  const { metaTitle, metaDescription, ...page } = storypage
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
     },
-    page: {
-      headline,
-      description,
-      image,
-      imageAlt,
-      contentSections,
-    },
+    page,
   }
 }
 

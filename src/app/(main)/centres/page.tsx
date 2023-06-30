@@ -7,7 +7,6 @@ import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 
 async function getPageData() {
   const centrespage = await reader.singletons.centrespage.read()
-  const config = await reader.singletons.config.read()
   const centres = await reader.collections.centres.all({
     resolveLinkedFiles: true,
   })
@@ -15,14 +14,9 @@ async function getPageData() {
   if (!centrespage) {
     throw new KeystaticContentNotFoundError("Story Page singleton")
   }
-  if (!config) {
-    throw new KeystaticContentNotFoundError("Site Settings")
-  }
   if (!centres) {
     throw new KeystaticContentNotFoundError("Centres Collection")
   }
-
-  const { siteTitle } = config
 
   const { metaTitle, metaDescription, headline, subheadline } = centrespage
 

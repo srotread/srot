@@ -12,17 +12,14 @@ async function getPageData() {
     throw new KeystaticContentNotFoundError("Media Page singleton")
   }
 
-  const { metaTitle, metaDescription, headline, gallerySections } = mediapage
+  const { metaTitle, metaDescription, ...page } = mediapage
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
     },
-    page: {
-      headline,
-      gallerySections,
-    },
+    page,
   }
 }
 
