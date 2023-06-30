@@ -1,3 +1,17 @@
+import { KeystaticContentNotFoundError } from "@/lib/exceptions"
+import reader from "@/lib/keystatic"
+
+export async function generateMetadata() {
+  const config = await reader.singletons.config.read()
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
+
+  return {
+    metatdataBase: new URL(config.url),
+  }
+}
+
 export default function RootLayout({
   children,
 }: {

@@ -30,7 +30,6 @@ export async function generateMetadata() {
   const description = homepage.metaDescription
 
   return {
-    metatdataBase: new URL(url),
     title: {
       default: title,
       template: `%s ${siteTitle}`,
