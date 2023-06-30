@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss"
 import { fontFamily } from "tailwindcss/defaultTheme"
 import twHamburgers from "tailwind-hamburgers"
 import forms from "@tailwindcss/forms"
-import headlessui from "@headlessui/tailwindcss"
+// import headlessui from "@headlessui/tailwindcss"
 import typography from "@tailwindcss/typography"
 
 const config = {
@@ -51,7 +51,12 @@ const config = {
       },
     },
   },
-  plugins: [twHamburgers, forms, headlessui, typography],
+  plugins: [
+    twHamburgers,
+    forms,
+    // headlessui,
+    typography,
+  ],
 } satisfies Config
 
 export default config
