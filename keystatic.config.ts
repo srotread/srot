@@ -701,6 +701,14 @@ export default config({
             length: { min: 1 },
           },
         }),
+        confirmation: fields.text({
+          label: "Confirmation Message - Contact Form",
+          description:
+            "This is shown to the user when they successfully submit the form. For example - Thank you for reaching out. We will get back to you shortly.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
       },
     }),
 
