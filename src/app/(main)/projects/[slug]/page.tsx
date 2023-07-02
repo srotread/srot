@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation"
+
 import SidebarLayout from "@/components/SidebarLayout"
 
 import { KeystaticContentNotFoundError } from "@/lib/exceptions"
@@ -11,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = params
   const project = await reader.collections.projects.read(slug)
 
-  if (!project) throw new KeystaticContentNotFoundError(`Project - ${slug}`)
+  if (!project) notFound()
 
   const { title, description } = project
 
@@ -31,7 +33,7 @@ const Project = async ({ params }: Props): Promise<JSX.Element> => {
   const workshops = await reader.collections.workshops.all()
 
   if (!project) {
-    throw new KeystaticContentNotFoundError(`Project - ${slug}`)
+    notFound()
   }
   if (!projects) {
     throw new KeystaticContentNotFoundError(`Projects Collection`)
