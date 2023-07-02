@@ -1,8 +1,11 @@
 "use client"
 
+import { useState } from "react"
+
 import { z } from "zod"
 import { useForm, type SubmitHandler } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useFormspark } from "@formspark/use-formspark"
 
 import Button from "@/components/Button"
 // import Caret from "@/components/Icons/Caret"
@@ -21,15 +24,51 @@ const formSchema = z.object({
 
 type FormSchemaType = z.infer<typeof formSchema>
 
-const ContactForm = () => {
+const ContactForm = ({
+  message,
+  email,
+}: {
+  message: string
+  email: string
+}) => {
+  const [sent, setSent] = useState(true)
+  const [status, setStatus] = useState<{ success: boolean; message: string }>()
+
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    reset,
+    formState: { errors },
   } = useForm<FormSchemaType>({ resolver: zodResolver(formSchema) })
 
-  const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
-    console.log(data)
+  const [submit, submitting] = useFormspark({
+    formId: "BEy3X43h",
+  })
+
+  const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
+    try {
+      await submit({
+        ...data,
+        _email: {
+          subject: `Contact Form Submission - ${data.firstName} ${data.lastName}`,
+          from: data.email,
+        },
+      })
+
+      reset()
+
+      setSent(true)
+      setStatus({ success: true, message })
+
+      setTimeout(() => {
+        setSent(false)
+      }, 5000)
+    } catch (error) {
+      setStatus({
+        success: false,
+        message: `Something went wrong. Please try again later. Or reach out at ${email}`,
+      })
+    }
   }
 
   return (
@@ -144,14 +183,20 @@ const ContactForm = () => {
           </p>
         )}
       </div>
+
       <div className="text-xl lg:text-2xl">
         <Button
           text="Get in touch"
           theme="Light"
           type="Primary"
-          disabled={isSubmitting}
+          loading={submitting}
+          disabled={submitting}
         />
       </div>
+
+      {sent && !submitting && (
+        <p className="text-base lg:text-lg 2xl:text-xl">{status?.message}</p>
+      )}
     </form>
   )
 }

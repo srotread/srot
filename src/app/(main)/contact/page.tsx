@@ -6,9 +6,13 @@ import ContactForm from "@/components/ContactForm"
 
 async function getPageData() {
   const contactpage = await reader.singletons.contactpage.read()
+  const config = await reader.singletons.config.read()
 
   if (!contactpage) {
     throw new KeystaticContentNotFoundError("Work with Us Page singleton")
+  }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings singleton")
   }
 
   const { metaTitle, metaDescription, ...page } = contactpage
@@ -18,7 +22,7 @@ async function getPageData() {
       title: `${metaTitle} | `,
       description: metaDescription,
     },
-    page,
+    page: { ...page, email: config.email },
   }
 }
 
@@ -43,7 +47,9 @@ export async function generateMetadata() {
 }
 
 const Contact = async (): Promise<JSX.Element> => {
-  const { headline, image, imageAlt } = (await getPageData()).page
+  const { headline, image, imageAlt, confirmation, email } = (
+    await getPageData()
+  ).page
 
   return (
     <>
@@ -58,7 +64,7 @@ const Contact = async (): Promise<JSX.Element> => {
               <ImageWithBorder src={image} alt={imageAlt} sizes="" />
             </div>
 
-            <ContactForm />
+            <ContactForm message={confirmation} email={email} />
           </div>
         </div>
 
