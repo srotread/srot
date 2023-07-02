@@ -77,7 +77,7 @@ const Workshops = async (): Promise<JSX.Element> => {
               description={description}
               btnType={active ? "Primary" : "Secondary"}
               btnTxt={active ? "Enroll now" : "Learn more"}
-              slug={slug}
+              slug={`/workshops/${slug}`}
             />
           )
         })}

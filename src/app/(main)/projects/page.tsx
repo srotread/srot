@@ -76,7 +76,7 @@ const Projects = async (): Promise<JSX.Element> => {
               title={title}
               description={description}
               btnType={i === 0 ? "Primary" : "Secondary"}
-              slug={slug}
+              slug={`/projects/${slug}`}
             />
           )
         })}
