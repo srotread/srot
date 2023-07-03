@@ -67,7 +67,7 @@ const Home = async (): Promise<JSX.Element> => {
             />
           </Link>
           <Link href="/story">
-            <Button text="Learn More" type="Secondary" theme="Dark" />
+            <Button text="Read our story" type="Secondary" theme="Dark" />
           </Link>
         </div>
       </main>
@@ -87,14 +87,14 @@ const Home = async (): Promise<JSX.Element> => {
             />
           </div>
 
-          <div className="prose prose-invert prose-lg text-light marker:text-light mt-9">
-            {storyDescription && (
+          {storyDescription && (
+            <div className="prose prose-invert prose-lg lg:prose-xl 3xl:prose-2xl text-light marker:text-light mt-9">
               <DocumentRenderer document={storyDescription} />
-            )}
-          </div>
+            </div>
+          )}
 
           <Button
-            text="Read out story"
+            text="Full story"
             icon={<RightArrow />}
             type="Secondary"
             theme="Dark"
@@ -140,6 +140,7 @@ const Home = async (): Promise<JSX.Element> => {
                 title={title}
                 description={description}
                 btnType={i === 0 ? "Primary" : "Secondary"}
+                btnTxt="Find out more"
                 slug={slug}
               />
             )
@@ -174,7 +175,7 @@ const Home = async (): Promise<JSX.Element> => {
 
         <div className="flex max-w-5xl flex-col gap-14 2xl:gap-20">
           {workshops.map(({ slug, entry }, i) => {
-            const { title, description, image, imageAlt, active } = entry
+            const { title, description, image, imageAlt } = entry
 
             return (
               <Card
@@ -184,8 +185,8 @@ const Home = async (): Promise<JSX.Element> => {
                 alt={imageAlt}
                 title={title}
                 description={description}
-                btnType={active ? "Primary" : "Secondary"}
-                btnTxt={active ? "Enroll now" : "Learn more"}
+                btnType={i === 0 ? "Primary" : "Secondary"}
+                btnTxt="Find out more"
                 slug={slug}
               />
             )
@@ -203,40 +204,9 @@ const Home = async (): Promise<JSX.Element> => {
       </section>
 
       <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36">
-        <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
-          <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
-            Funding Goals
-          </h3>
-
-          <Link className="hidden sm:block" href="/support">
-            <Button
-              text="Find out more"
-              icon={<RightArrow />}
-              type="Primary"
-              theme="Light"
-            />
-          </Link>
-        </div>
-
-        <div className="rounded bg-dark px-14 py-10 text-light 2xl:px-24 2xl:py-16">
-          <p className="mx-auto mb-8 w-max text-left text-xl md:text-2xl xl:mx-0 3xl:text-3xl">
-            ₹ 50,000 / ₹ 1,50,000
-          </p>
-          {/* w-[Percentage Value] left-[PV - 10] md:left-[PV - 4]  */}
-          <div className="relative mb-20 block h-6 w-full rounded-full bg-light md:h-8">
-            <div className="absolute left-0 top-0 h-full w-[70%] rounded-full bg-accent" />
-            <span className="tooltip absolute -bottom-9 left-[60%] z-10 inline-block h-full w-min rounded bg-light p-1 align-middle text-sm font-medium text-dark md:-bottom-11 md:left-[66%] md:text-lg 3xl:text-xl">
-              80%
-            </span>
-          </div>
-
-          <Link
-            href="/support"
-            className="mx-auto w-max text-lg md:text-xl xl:mx-0 3xl:text-2xl"
-          >
-            <Button text="Support Us" type="Primary" theme="Dark" />
-          </Link>
-        </div>
+        <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
+          Funding Goals
+        </h3>
       </section>
     </>
   )
