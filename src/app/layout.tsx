@@ -8,7 +8,8 @@ export async function generateMetadata() {
   }
 
   return {
-    metatdataBase: new URL(config.url),
+    // metatdataBase: new URL(config.url),
+    // metatdataBase: new URL("https://srot.vercel.app"),
   }
 }
 
