@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props) {
   if (!config) throw new KeystaticContentNotFoundError("Site Settings")
   if (!project) notFound()
 
-  const { title, description } = project
+  const { title, description, image } = project
   const { url } = config
 
   return {
@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: Props) {
     description,
     openGraph: {
       url: `${url}/projects/${slug}`,
+      images: [{ url: image }],
     },
     alternates: {
       canonical: `${url}/projects/${slug}`,

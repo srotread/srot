@@ -23,13 +23,14 @@ async function getPageData() {
       title: `${metaTitle} | `,
       description: metaDescription,
       url,
+      image: page.image,
     },
     page: { ...page, email },
   }
 }
 
 export async function generateMetadata() {
-  const { title, description, url } = (await getPageData()).meta
+  const { title, description, url, image } = (await getPageData()).meta
 
   return {
     title,
@@ -38,6 +39,7 @@ export async function generateMetadata() {
       title,
       description,
       url: `${url}/contact`,
+      images: [{ url: image }],
     },
     twitter: {
       title,

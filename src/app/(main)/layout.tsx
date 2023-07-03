@@ -24,10 +24,11 @@ export async function generateMetadata() {
     throw new KeystaticContentNotFoundError("Home Page Meta Data")
   }
 
+  const { metaTitle, metaDescription, backgroundImage } = homepage
   const { url, twitter, siteTitle } = config
 
-  const title = `${homepage.metaTitle} | ${siteTitle}`
-  const description = homepage.metaDescription
+  const title = `${metaTitle} | ${siteTitle}`
+  const description = metaDescription
 
   return {
     title: {
@@ -38,6 +39,7 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
+      images: [{ url: backgroundImage }],
       url,
       siteName: siteTitle,
       type: "website",
