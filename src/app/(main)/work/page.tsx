@@ -10,6 +10,7 @@ import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 async function getPageData() {
   const workpage = await reader.singletons.workpage.read()
   const testimonials = await reader.collections.testimonials.all()
+  const config = await reader.singletons.config.read()
 
   if (!workpage) {
     throw new KeystaticContentNotFoundError("Work with Us Page singleton")
@@ -17,13 +18,18 @@ async function getPageData() {
   if (!testimonials) {
     throw new KeystaticContentNotFoundError("Testimonials Collection")
   }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
 
   const { metaTitle, metaDescription, ...page } = workpage
+  const { url } = config
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
+      url,
     },
     page: {
       ...page,
@@ -33,7 +39,7 @@ async function getPageData() {
 }
 
 export async function generateMetadata() {
-  const { title, description } = (await getPageData()).meta
+  const { title, description, url } = (await getPageData()).meta
 
   return {
     title,
@@ -41,13 +47,14 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
+      url: `${url}/work`,
     },
     twitter: {
       title,
       description,
     },
     alternates: {
-      canonical: "/work",
+      canonical: `${url}/work`,
     },
   }
 }

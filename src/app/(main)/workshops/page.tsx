@@ -8,6 +8,7 @@ async function getPageData() {
     resolveLinkedFiles: true,
   })
   const workshops = await reader.collections.workshops.all()
+  const config = await reader.singletons.config.read()
 
   if (!workshopspage) {
     throw new KeystaticContentNotFoundError("Workshops Page singleton")
@@ -15,13 +16,18 @@ async function getPageData() {
   if (!workshops) {
     throw new KeystaticContentNotFoundError("Workshops collection")
   }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
 
   const { headline, subheadline, metaTitle, metaDescription } = workshopspage
+  const { url } = config
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
+      url,
     },
     page: {
       headline,
@@ -32,7 +38,7 @@ async function getPageData() {
 }
 
 export async function generateMetadata() {
-  const { title, description } = (await getPageData()).meta
+  const { title, description, url } = (await getPageData()).meta
 
   return {
     title,
@@ -40,13 +46,14 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
+      url: `${url}/workshops`,
     },
     twitter: {
       title,
       description,
     },
     alternates: {
-      canonical: "/workshops",
+      canonical: `${url}/workshops`,
     },
   }
 }

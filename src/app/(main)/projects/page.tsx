@@ -8,6 +8,7 @@ async function getPageData() {
     resolveLinkedFiles: true,
   })
   const projects = await reader.collections.projects.all()
+  const config = await reader.singletons.config.read()
 
   if (!projectspage) {
     throw new KeystaticContentNotFoundError("Projects Page singleton")
@@ -15,13 +16,18 @@ async function getPageData() {
   if (!projects) {
     throw new KeystaticContentNotFoundError("Projects collection")
   }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
 
   const { headline, subheadline, metaTitle, metaDescription } = projectspage
+  const { url } = config
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
+      url,
     },
     page: {
       headline,
@@ -32,7 +38,7 @@ async function getPageData() {
 }
 
 export async function generateMetadata() {
-  const { title, description } = (await getPageData()).meta
+  const { title, description, url } = (await getPageData()).meta
 
   return {
     title,
@@ -40,13 +46,14 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
+      url: `${url}/projects`,
     },
     twitter: {
       title,
       description,
     },
     alternates: {
-      canonical: "/projects",
+      canonical: `${url}/projects`,
     },
   }
 }

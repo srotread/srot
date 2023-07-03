@@ -38,7 +38,7 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
-      url: "/",
+      url,
       siteName: siteTitle,
       type: "website",
     },
@@ -50,7 +50,7 @@ export async function generateMetadata() {
     },
     themeColor: "#FFF",
     alternates: {
-      canonical: "/",
+      canonical: url,
     },
   }
 }

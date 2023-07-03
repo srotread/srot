@@ -7,24 +7,30 @@ async function getPageData() {
   const mediapage = await reader.singletons.mediapage.read({
     resolveLinkedFiles: true,
   })
+  const config = await reader.singletons.config.read()
 
   if (!mediapage) {
     throw new KeystaticContentNotFoundError("Media Page singleton")
   }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
 
   const { metaTitle, metaDescription, ...page } = mediapage
+  const { url } = config
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
+      url,
     },
     page,
   }
 }
 
 export async function generateMetadata() {
-  const { title, description } = (await getPageData()).meta
+  const { title, description, url } = (await getPageData()).meta
 
   return {
     title,
@@ -32,13 +38,14 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
+      url: `${url}/media`,
     },
     twitter: {
       title,
       description,
     },
     alternates: {
-      canonical: "/media",
+      canonical: `${url}/media`,
     },
   }
 }

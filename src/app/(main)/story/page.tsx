@@ -9,23 +9,30 @@ async function getPageData() {
   const storypage = await reader.singletons.storypage.read({
     resolveLinkedFiles: true,
   })
+  const config = await reader.singletons.config.read()
+
   if (!storypage) {
     throw new KeystaticContentNotFoundError("Story Page singleton")
   }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
 
   const { metaTitle, metaDescription, ...page } = storypage
+  const { url } = config
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
+      url,
     },
     page,
   }
 }
 
 export async function generateMetadata() {
-  const { title, description } = (await getPageData()).meta
+  const { title, description, url } = (await getPageData()).meta
 
   return {
     title,
@@ -33,13 +40,14 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
+      url: `${url}/story`,
     },
     twitter: {
       title,
       description,
     },
     alternates: {
-      canonical: "/story",
+      canonical: `${url}/story`,
     },
   }
 }

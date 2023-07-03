@@ -16,18 +16,20 @@ async function getPageData() {
   }
 
   const { metaTitle, metaDescription, ...page } = contactpage
+  const { url, email } = config
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
+      url,
     },
-    page: { ...page, email: config.email },
+    page: { ...page, email },
   }
 }
 
 export async function generateMetadata() {
-  const { title, description } = (await getPageData()).meta
+  const { title, description, url } = (await getPageData()).meta
 
   return {
     title,
@@ -35,13 +37,14 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
+      url: `${url}/contact`,
     },
     twitter: {
       title,
       description,
     },
     alternates: {
-      canonical: "/contact",
+      canonical: `${url}/contact`,
     },
   }
 }

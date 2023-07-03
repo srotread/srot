@@ -17,15 +17,25 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = params
-  const project = await reader.collections.projects.read(slug)
 
+  const project = await reader.collections.projects.read(slug)
+  const config = await reader.singletons.config.read()
+
+  if (!config) throw new KeystaticContentNotFoundError("Site Settings")
   if (!project) notFound()
 
   const { title, description } = project
+  const { url } = config
 
   return {
     title: `${title} | `,
     description,
+    openGraph: {
+      url: `${url}/projects/${slug}`,
+    },
+    alternates: {
+      canonical: `${url}/projects/${slug}`,
+    },
   }
 }
 

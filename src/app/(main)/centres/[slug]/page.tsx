@@ -18,14 +18,23 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { slug } = params
   const centre = await reader.collections.centres.read(slug)
+  const config = await reader.singletons.config.read()
 
   if (!centre) throw new KeystaticContentNotFoundError(`Centre - ${slug}`)
+  if (!config) throw new KeystaticContentNotFoundError(`Site Settings`)
 
   const { name, description } = centre
+  const { url } = config
 
   return {
     title: `${name} | `,
     description,
+    openGraph: {
+      url: `${url}/centres/${slug}`,
+    },
+    alternates: {
+      canonical: `${url}/centres/${slug}`,
+    },
   }
 }
 

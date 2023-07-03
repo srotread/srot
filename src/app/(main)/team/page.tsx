@@ -5,24 +5,30 @@ import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 
 async function getPageData() {
   const teampage = await reader.singletons.teampage.read()
+  const config = await reader.singletons.config.read()
 
   if (!teampage) {
     throw new KeystaticContentNotFoundError("Media Page singleton")
   }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
 
   const { metaTitle, metaDescription, ...page } = teampage
+  const { url } = config
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
+      url,
     },
     page,
   }
 }
 
 export async function generateMetadata() {
-  const { title, description } = (await getPageData()).meta
+  const { title, description, url } = (await getPageData()).meta
 
   return {
     title,
@@ -30,13 +36,14 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
+      url: `${url}/team`,
     },
     twitter: {
       title,
       description,
     },
     alternates: {
-      canonical: "/team",
+      canonical: `${url}/team`,
     },
   }
 }

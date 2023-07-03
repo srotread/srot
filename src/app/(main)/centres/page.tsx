@@ -12,6 +12,7 @@ async function getPageData() {
   const centres = await reader.collections.centres.all({
     resolveLinkedFiles: true,
   })
+  const config = await reader.singletons.config.read()
 
   if (!centrespage) {
     throw new KeystaticContentNotFoundError("Story Page singleton")
@@ -19,13 +20,18 @@ async function getPageData() {
   if (!centres) {
     throw new KeystaticContentNotFoundError("Centres Collection")
   }
+  if (!config) {
+    throw new KeystaticContentNotFoundError("Site Settings")
+  }
 
   const { metaTitle, metaDescription, headline, subheadline } = centrespage
+  const { url } = config
 
   return {
     meta: {
       title: `${metaTitle} | `,
       description: metaDescription,
+      url,
     },
     page: {
       headline,
@@ -36,7 +42,7 @@ async function getPageData() {
 }
 
 export async function generateMetadata() {
-  const { title, description } = (await getPageData()).meta
+  const { title, description, url } = (await getPageData()).meta
 
   return {
     title,
@@ -44,13 +50,14 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
+      url: `${url}/centres`,
     },
     twitter: {
       title,
       description,
     },
     alternates: {
-      canonical: "/centres",
+      canonical: `${url}/centres`,
     },
   }
 }
