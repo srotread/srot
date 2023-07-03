@@ -224,10 +224,10 @@ const Home = async (): Promise<JSX.Element> => {
           <h2 className="text-4xl font-bold underline decoration-accent md:text-5xl  2xl:text-6xl 3xl:text-7xl">
             {supportHeadline}
           </h2>
-          <p className="mb-8 mt-10 text-xl md:mb-14 md:mt-16 md:text-2xl 2xl:text-3xl">
+          <p className="mb-6 mt-8 text-xl md:mb-12 md:mt-14 md:text-2xl 2xl:text-3xl">
             {supportSubheadline}
           </p>
-          <div className="flex flex-row items-center justify-center gap-8 text-lg md:text-xl 2xl:text-2xl">
+          <div className="flex flex-row items-center justify-center gap-4 md:gap-8 text-lg md:text-xl 2xl:text-2xl">
             <Link href={primaryCTA.path}>
               <Button
                 text={primaryCTA.text}
