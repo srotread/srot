@@ -980,6 +980,31 @@ export default config({
             length: { min: 1 },
           },
         }),
+        content: fields.document({
+          label: "Centre Content",
+          description:
+            "Makes up the individual centre page. ONLY use Paragraphs, Heading 2s and Heading 3s. We do not support Quotes & Code (The last two icons in the bar.)",
+          formatting: true,
+          links: true,
+          // images: {
+          //   directory: "/public/images/projects/individual/",
+          //   publicPath: "/images/projects/individual/",
+          //   schema: {
+          //     alt: fields.text({
+          //       label: "Image Alternate Text",
+          //       description:
+          //         "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+          //       validation: {
+          //         length: { min: 1 },
+          //       },
+          //     }),
+          //     title: fields.text({
+          //       label: "Image Caption",
+          //       description: "This is optional. Displayed under the image.",
+          //     }),
+          //   },
+          // },
+        }),
       },
     }),
 
