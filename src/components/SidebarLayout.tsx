@@ -19,19 +19,27 @@ export default function SidebarLayout({
   bgClr,
   txtClr,
 }: Props) {
-  const bgClrInverted = bgClr === "bg-dark" ? "bg-light" : "bg-dark"
-  const txtClrInverted = txtClr === "text-dark" ? "text-light" : "text-dark"
+  const mainTxtBgClrs =
+    bgClr === "bg-dark" ? "bg-dark text-light" : "bg-light text-dark"
+  const sidebarTxtBgClrs =
+    bgClr === "bg-dark" ? "bg-light text-dark" : "bg-dark text-light"
+  const proseTxtBgClrs =
+    bgClr === "bg-dark"
+      ? "bg-dark prose-invert text-light marker:text-light"
+      : "bg-light text-dark marker:text-dark"
 
   return (
     <div
-      className={`grid grid-cols-1 lg:grid-cols-[6fr,4fr] 3xl:grid-cols-[7fr,3fr] px-col-outer py-16 xl:px-col-inner lg:py-36 gap-12 lg:gap-8 xl:gap-24 ${bgClr} ${txtClr}`}
+      className={`grid grid-cols-1 lg:grid-cols-[6fr,4fr] 3xl:grid-cols-[7fr,3fr] px-col-outer py-16 xl:px-col-inner lg:py-36 gap-12 lg:gap-8 xl:gap-24 ${mainTxtBgClrs}`}
     >
       <main>
         <h1 className="text-3xl font-semibold md:text-4xl 2xl:text-5xl 3xl:text-6xl mb-9">
           {title}
         </h1>
 
-        <div className="prose prose-invert text-light marker:text-light prose-base md:prose-lg 2xl:prose-xl 3xl:prose-2xl">
+        <div
+          className={`prose prose-base md:prose-lg 2xl:prose-xl 3xl:prose-2xl ${proseTxtBgClrs}`}
+        >
           <DocumentRenderer document={document} />
         </div>
       </main>
@@ -40,7 +48,7 @@ export default function SidebarLayout({
           return (
             <div
               key={i}
-              className={`p-6 grid gap-4 rounded ${bgClrInverted} ${txtClrInverted}`}
+              className={`p-6 grid gap-4 rounded ${sidebarTxtBgClrs}`}
             >
               <h4 className="text-lg font-semibold md:text-xl 2xl:text-2xl 3xl:text-3xl">
                 {title}
