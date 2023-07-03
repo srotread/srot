@@ -73,7 +73,7 @@ const Workshops = async (): Promise<JSX.Element> => {
 
       <div className="flex max-w-5xl flex-col gap-14 2xl:gap-20">
         {workshops.map(({ slug, entry }, i) => {
-          const { title, description, image, imageAlt, active } = entry
+          const { title, description, image, imageAlt } = entry
           return (
             <Card
               key={slug}

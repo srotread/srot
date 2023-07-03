@@ -889,11 +889,6 @@ export default config({
             length: { min: 1 },
           },
         }),
-        active: fields.checkbox({
-          label: "Active",
-          description:
-            "Active workshops display and Enroll button, Inactive workshops display a Learn more button.",
-        }),
         image: fields.image({
           label: "Image",
           description:
