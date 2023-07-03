@@ -177,6 +177,58 @@ export default config({
             length: { min: 1 },
           },
         }),
+        workshopsSubheadline: fields.text({
+          label: "Subheadline - Workshops section",
+          description: "Shown under the main underlined heading.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        supportHeadline: fields.text({
+          label: "Headline - Support Us section",
+          description:
+            "The main underlined headline shown in the Support Us section.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        supportSubheadline: fields.text({
+          label: "Sub headline - Support Us section",
+          description: "The sub headline shown under the main headline.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        supportCTAs: fields.object({
+          primaryCTA: fields.object({
+            text: fields.text({
+              label: "Button Text - Primary Call to Action",
+              validation: {
+                length: { min: 1 },
+              },
+            }),
+            path: fields.text({
+              label: "Link Path - Primary Call to Action",
+              validation: {
+                length: { min: 1 },
+              },
+            }),
+          }),
+          secondaryCTA: fields.object({
+            text: fields.text({
+              label: "Button Text - Secondary Call to Action",
+              validation: {
+                length: { min: 1 },
+              },
+            }),
+            path: fields.text({
+              label: "Link Path - Secondary Call to Action",
+              validation: {
+                length: { min: 1 },
+              },
+            }),
+          }),
+        }),
       },
     }),
 

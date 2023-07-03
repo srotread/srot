@@ -37,8 +37,15 @@ const Home = async (): Promise<JSX.Element> => {
     storyImage,
     storyImageAlt,
     projectsHeadline,
+    projectsSubheadline,
     workshopsHeadline,
+    workshopsSubheadline,
+    supportHeadline,
+    supportSubheadline,
+    supportCTAs,
   } = homepage
+
+  const { primaryCTA, secondaryCTA } = supportCTAs
 
   return (
     <>
@@ -74,10 +81,10 @@ const Home = async (): Promise<JSX.Element> => {
 
       <section className="flex items-center justify-between gap-12 bg-dark px-col-outer text-light lg:pl-col-inner lg:pr-col-inner 2xl:pr-0">
         <div className="w-[60ch] py-16 text-lg leading-9 lg:py-36 3xl:text-2xl">
-          <h3 className="mb-6 text-[32px] font-medium md:text-4xl 2xl:mb-14 3xl:text-5xl">
+          <h2 className="mb-6 text-[32px] font-medium md:text-4xl 2xl:mb-14 3xl:text-5xl">
             <span className="font-bold text-accent">&lsquo;Srot&rsquo; </span>
             means &lsquo;Source&rsquo;.
-          </h3>
+          </h2>
 
           <div className="relative block aspect-[4/3] 2xl:hidden">
             <ImageWithBorder
@@ -109,12 +116,14 @@ const Home = async (): Promise<JSX.Element> => {
       <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36">
         <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
           <div>
-            <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
+            <h2 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
               {projectsHeadline}
-            </h3>
-            <p className="w-[minmax(20ch, max-content)] sm:w-full">
-              Your support helps fund projects like:
-            </p>
+            </h2>
+            {projectsSubheadline && (
+              <p className="w-[minmax(20ch, max-content)] sm:w-full">
+                {projectsSubheadline}
+              </p>
+            )}
           </div>
 
           <Link className="hidden sm:block" href="/projects">
@@ -159,9 +168,16 @@ const Home = async (): Promise<JSX.Element> => {
 
       <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36">
         <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
-          <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
-            {workshopsHeadline}
-          </h3>
+          <div>
+            <h2 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
+              {workshopsHeadline}
+            </h2>
+            {workshopsSubheadline && (
+              <p className="w-[minmax(20ch, max-content)] sm:w-full">
+                {workshopsSubheadline}
+              </p>
+            )}
+          </div>
 
           <Link className="hidden sm:block" href="/workshops">
             <Button
@@ -203,10 +219,28 @@ const Home = async (): Promise<JSX.Element> => {
         </Link>
       </section>
 
-      <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36">
-        <h3 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
-          Funding Goals
-        </h3>
+      <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36 text-center relative">
+        <div className="max-w-5xl">
+          <h2 className="text-4xl font-bold underline decoration-accent md:text-5xl  2xl:text-6xl 3xl:text-7xl">
+            {supportHeadline}
+          </h2>
+          <p className="mb-8 mt-10 text-xl md:mb-14 md:mt-16 md:text-2xl 2xl:text-3xl">
+            {supportSubheadline}
+          </p>
+          <div className="flex flex-row items-center justify-center gap-8 text-lg md:text-xl 2xl:text-2xl">
+            <Link href={primaryCTA.path}>
+              <Button
+                text={primaryCTA.text}
+                icon={<RightArrow />}
+                type="Primary"
+                theme="Light"
+              />
+            </Link>
+            <Link href={secondaryCTA.path}>
+              <Button text={secondaryCTA.text} type="Secondary" theme="Light" />
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   )
