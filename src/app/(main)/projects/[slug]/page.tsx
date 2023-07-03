@@ -9,6 +9,12 @@ type Props = {
   params: { slug: string }
 }
 
+export async function generateStaticParams() {
+  const projects = await reader.collections.projects.list()
+
+  return projects.map((slug) => ({ slug }))
+}
+
 export async function generateMetadata({ params }: Props) {
   const { slug } = params
   const project = await reader.collections.projects.read(slug)
