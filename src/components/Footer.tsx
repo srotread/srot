@@ -39,6 +39,7 @@ export default async function Footer() {
           <h6 className="mb-6 text-xl">Socials</h6>
           <div className="flex gap-2">
             <Link
+              aria-label="Srot Instagram page"
               href={instagram}
               target="_blank"
               className="h-12 w-12 text-accent transition-all hover:text-light"
@@ -46,6 +47,7 @@ export default async function Footer() {
               <Instagram />
             </Link>
             <Link
+              aria-label="Srot Facebook page"
               href={facebook}
               target="_blank"
               className="h-12 w-12 text-accent transition-all hover:text-light"
