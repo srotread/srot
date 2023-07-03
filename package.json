@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ul:d": "npx unlighthouse --site srot.vercel.app --desktop",
+    "ul:m": "npx unlighthouse --site srot.vercel.app"
   },
   "dependencies": {
     "@formspark/use-formspark": "^0.1.39",
