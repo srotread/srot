@@ -108,7 +108,7 @@ const Centres = async (): Promise<JSX.Element> => {
                 className="inline-block mt-9 text-xl 3xl:text-2xl"
               >
                 <Button
-                  text="Learn more"
+                  text="Find out more"
                   theme="Light"
                   type="Primary"
                   icon={<RightArrow />}

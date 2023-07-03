@@ -72,7 +72,7 @@ const Workshops = async (): Promise<JSX.Element> => {
       </p>
 
       <div className="flex max-w-5xl flex-col gap-14 2xl:gap-20">
-        {workshops.map(({ slug, entry }) => {
+        {workshops.map(({ slug, entry }, i) => {
           const { title, description, image, imageAlt, active } = entry
           return (
             <Card
@@ -82,8 +82,8 @@ const Workshops = async (): Promise<JSX.Element> => {
               alt={imageAlt}
               title={title}
               description={description}
-              btnType={active ? "Primary" : "Secondary"}
-              btnTxt={active ? "Enroll now" : "Learn more"}
+              btnType={i === 0 ? "Primary" : "Secondary"}
+              btnTxt="Find out more"
               slug={`/workshops/${slug}`}
             />
           )

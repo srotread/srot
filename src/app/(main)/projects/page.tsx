@@ -83,6 +83,7 @@ const Projects = async (): Promise<JSX.Element> => {
               title={title}
               description={description}
               btnType={i === 0 ? "Primary" : "Secondary"}
+              btnTxt="Find out more"
               slug={`/projects/${slug}`}
             />
           )
