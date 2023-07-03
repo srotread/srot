@@ -15,3 +15,10 @@ workshopsHeadline: Our Workshops
 workshopsSubheadline: Something goes here
 supportHeadline: Support Us
 supportSubheadline: This is a subheadline. Encourages people to donate
+supportCTAs:
+  primaryCTA:
+    text: Donate now
+    path: /support
+  secondaryCTA:
+    text: Get involved
+    path: /work
