@@ -43,7 +43,7 @@ export default function SidebarLayout({
           <DocumentRenderer document={document} />
         </div>
       </main>
-      <aside className={`grid gap-8`}>
+      <aside className={`grid gap-8 h-fit`}>
         {sidebar.map(({ title, entries }, i) => {
           return (
             <div
