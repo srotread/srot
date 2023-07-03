@@ -47,7 +47,7 @@ const Card: FC<CardProps> = ({
             fill
           />
         </div>
-        <div className="flex grow flex-col justify-between gap-4 p-7">
+        <div className="flex grow flex-col justify-between gap-8 p-7">
           <div className="flex flex-col gap-4">
             <div className="h-1 w-24 rounded-[1px] bg-accent" />
             <h6 className="text-xl font-bold 2xl:text-2xl">{title}</h6>
