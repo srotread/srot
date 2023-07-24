@@ -100,12 +100,14 @@ const Home = async (): Promise<JSX.Element> => {
             </div>
           )}
 
-          <Button
-            text="Full story"
-            icon={<RightArrow />}
-            type="Secondary"
-            theme="Dark"
-          />
+          <Link href="/story">
+            <Button
+              text="Full story"
+              icon={<RightArrow />}
+              type="Secondary"
+              theme="Dark"
+            />
+          </Link>
         </div>
 
         <div className="relative mr-2 hidden aspect-[4/3] w-1/2 2xl:block">
