@@ -169,7 +169,7 @@ const Home = async (): Promise<JSX.Element> => {
       </section>
 
       <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36">
-        <h2 className="inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl mb-16">
+        <h2 className="mb-16 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:block md:text-4xl 3xl:text-5xl">
           {testimonialsHeadline}
         </h2>
         <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2">
@@ -191,7 +191,7 @@ const Home = async (): Promise<JSX.Element> => {
       </section>
 
       <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36 text-center relative">
-        <div className="max-w-5xl">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold underline decoration-accent md:text-5xl  2xl:text-6xl 3xl:text-7xl">
             {supportHeadline}
           </h2>

@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next"
 
-import { KeystaticContentNotFoundError } from '@/lib/exceptions'
+import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 import reader from "@/lib/keystatic"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (!settings) throw new KeystaticContentNotFoundError("Site Settings")
 
   const { url, pages } = settings
-  
+
   const pageUrls = pages.map((page) => ({
     url: `${url}${page.path}`,
     lastModified: new Date(),
