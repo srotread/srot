@@ -1,6 +1,23 @@
 logo: /images/config/logo.png
 url: https://srot.in
 siteTitle: Srot Foundation
+pages:
+  - text: Home
+    slug: /
+  - text: Our Story
+    slug: /story
+  - text: Projects
+    slug: /projects
+  - text: Centres
+    slug: /centres
+  - text: Media
+    slug: /media
+  - text: Team
+    slug: /team
+  - text: Work with Us
+    slug: /work
+  - text: Contact Us
+    slug: /contact
 address: >-
   FL-A-802, The Latitude, New Heaven Park-II, SN-18, HN-6, Kondhwa, NIBM road,
   Pune 411048
