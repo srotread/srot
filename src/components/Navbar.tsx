@@ -42,7 +42,7 @@ export default async function Navbar() {
         </Link>
       </div>
 
-      <MobileNavElements pages={pages} />
+      <MobileNavElements pages={[...pages]} />
     </nav>
   )
 }

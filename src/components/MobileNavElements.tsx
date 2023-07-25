@@ -10,7 +10,7 @@ const MobileNavElements = ({
   pages,
 }: {
   pages: {
-    readonly name: string
+    readonly text: string
     readonly path: string
   }[]
 }) => {
