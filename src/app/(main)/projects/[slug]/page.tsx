@@ -47,16 +47,12 @@ const Project = async ({ params }: Props): Promise<JSX.Element> => {
     resolveLinkedFiles: true,
   })
   const projects = await reader.collections.projects.all()
-  const workshops = await reader.collections.workshops.all()
 
   if (!project) {
     notFound()
   }
   if (!projects) {
     throw new KeystaticContentNotFoundError(`Projects Collection`)
-  }
-  if (!workshops) {
-    throw new KeystaticContentNotFoundError(`Workshops Collection`)
   }
 
   const { title, content } = project
@@ -71,20 +67,11 @@ const Project = async ({ params }: Props): Promise<JSX.Element> => {
     }))
     .slice(0, 2)
 
-  const sidebarWorkshops = workshops
-    .map((workshop) => ({
-      slug: `/workshops/${workshop.slug}`,
-      title: workshop.entry.title,
-      description: workshop.entry.description,
-    }))
-    .slice(0, 2)
-
   const sidebar = [
     {
       title: "Check out other Projects:",
       entries: sidebarProjects,
     },
-    { title: "Check out our Workshops:", entries: sidebarWorkshops },
   ]
 
   return (

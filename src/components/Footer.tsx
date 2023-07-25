@@ -67,9 +67,6 @@ export default async function Footer() {
           <Link href="/projects" className="hover:text-accent hover:underline">
             Projects
           </Link>
-          <Link href="/workshops" className="hover:text-accent hover:underline">
-            Workshops
-          </Link>
           <Link href="/centres" className="hover:text-accent hover:underline">
             Centres
           </Link>
