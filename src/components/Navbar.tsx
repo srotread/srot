@@ -1,4 +1,3 @@
-import * as config from "@/lib/config"
 import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 import reader from "@/lib/keystatic"
 
@@ -9,14 +8,12 @@ import Button from "./Button"
 import MobileNavElements from "./MobileNavElements"
 import NavLink from "./NavLink"
 
-const { pages } = config
-
 export default async function Navbar() {
   const settings = await reader.singletons.config.read()
 
   if (!settings) throw new KeystaticContentNotFoundError("Site Settings")
 
-  const { logo } = settings
+  const { logo, pages } = settings
 
   return (
     <nav className="sticky top-0 left-0 right-0 z-10 flex items-center justify-between bg-light px-col-outer">

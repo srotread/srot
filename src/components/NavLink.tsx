@@ -2,8 +2,13 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { ComponentPropsWithoutRef } from "react"
 
-const NavLink = ({ page }: { page: { name: string; path: string } }) => {
+interface Props extends ComponentPropsWithoutRef<"a"> {
+  page: { readonly text: string; readonly path: string }
+}
+
+const NavLink = ({ page, ...props }: Props) => {
   const currentRoute = usePathname()
 
   return (
@@ -12,8 +17,9 @@ const NavLink = ({ page }: { page: { name: string; path: string } }) => {
       className={`link-underline link-underline-black ${
         currentRoute === page.path && "link-active"
       }`}
+      {...props}
     >
-      {page.name}
+      {page.text}
     </Link>
   )
 }

@@ -10,13 +10,14 @@ import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 import RightArrow from "@/components/Icons/RightArrow"
 import ImageWithBorder from "@/components/ImageWithBorder"
 import Card from "@/components/Card"
+import Testimonial from "@/components/Testimonial"
 
 const Home = async (): Promise<JSX.Element> => {
   const homepage = await reader.singletons.homepage.read({
     resolveLinkedFiles: true,
   })
   const projects = await reader.collections.projects.all()
-  const workshops = await reader.collections.workshops.all()
+  const testimonials = await reader.collections.testimonials.all()
 
   if (!homepage) {
     throw new KeystaticContentNotFoundError("Home Page singleton")
@@ -24,8 +25,8 @@ const Home = async (): Promise<JSX.Element> => {
   if (!projects) {
     throw new KeystaticContentNotFoundError("Projects collection")
   }
-  if (!workshops) {
-    throw new KeystaticContentNotFoundError("Workshops collection")
+  if (!testimonials) {
+    throw new KeystaticContentNotFoundError("Testimonials collection")
   }
 
   const {
@@ -38,8 +39,7 @@ const Home = async (): Promise<JSX.Element> => {
     storyImageAlt,
     projectsHeadline,
     projectsSubheadline,
-    workshopsHeadline,
-    workshopsSubheadline,
+    testimonialsHeadline,
     supportHeadline,
     supportSubheadline,
     supportCTAs,
@@ -169,56 +169,25 @@ const Home = async (): Promise<JSX.Element> => {
       </section>
 
       <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36">
-        <div className="mb-16 flex items-start justify-between text-lg md:text-xl 2xl:text-2xl">
-          <div>
-            <h2 className="mb-6 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl">
-              {workshopsHeadline}
-            </h2>
-            {workshopsSubheadline && (
-              <p className="w-[minmax(20ch, max-content)] sm:w-full">
-                {workshopsSubheadline}
-              </p>
-            )}
-          </div>
-
-          <Link className="hidden sm:block" href="/workshops">
-            <Button
-              text="See all"
-              icon={<RightArrow />}
-              type="Secondary"
-              theme="Light"
-            />
-          </Link>
-        </div>
-
-        <div className="flex max-w-5xl flex-col gap-14 2xl:gap-20">
-          {workshops.map(({ slug, entry }, i) => {
-            const { title, description, image, imageAlt } = entry
+        <h2 className="inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:mb-9 md:block md:text-4xl 3xl:text-5xl mb-16">
+          {testimonialsHeadline}
+        </h2>
+        <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2">
+          {testimonials.map(({ slug, entry }) => {
+            const { quote, image, imageAlt, name, title } = entry
 
             return (
-              <Card
-                key={slug}
-                type="Workshop"
-                img={image}
-                alt={imageAlt}
+              <Testimonial
+                key={title}
+                quote={quote}
+                imgSrc={image}
+                imgAlt={imageAlt}
+                name={slug}
                 title={title}
-                description={description}
-                btnType={i === 0 ? "Primary" : "Secondary"}
-                btnTxt="Find out more"
-                slug={slug}
               />
             )
           })}
         </div>
-
-        <Link href="/workshops" className="mt-12 block text-base sm:hidden">
-          <Button
-            text="See all"
-            icon={<RightArrow />}
-            type="Secondary"
-            theme="Light"
-          />
-        </Link>
       </section>
 
       <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36 text-center relative">

@@ -43,6 +43,22 @@ export default config({
             length: { min: 1 },
           },
         }),
+        pages: fields.array(
+          fields.object({
+            text: fields.text({
+              label: "Text",
+              validation: { length: { min: 1 } },
+            }),
+            path: fields.text({
+              label: "Text",
+              validation: { length: { min: 1 } },
+            }),
+          }),
+          {
+            label: "Navigation Menu Links",
+            itemLabel: (props) => props.fields.text.value,
+          }
+        ),
         address: fields.text({
           label: "Address - Footer",
           description: "The Regd. Address in the Footer.",
@@ -170,16 +186,9 @@ export default config({
             length: { min: 1 },
           },
         }),
-        workshopsHeadline: fields.text({
-          label: "Headline - Workshops section",
-          description: "Main underlined heading for the Workshops section.",
-          validation: {
-            length: { min: 1 },
-          },
-        }),
-        workshopsSubheadline: fields.text({
-          label: "Subheadline - Workshops section",
-          description: "Shown under the main underlined heading.",
+        testimonialsHeadline: fields.text({
+          label: "Headline - Testimonials section",
+          description: "Main underlined heading for the Testimonials section.",
           validation: {
             length: { min: 1 },
           },
@@ -895,74 +904,6 @@ export default config({
           label: "Project Content",
           description:
             "Makes up the individual project page. ONLY use Paragraphs, Heading 2s and Heading 3s. We do not support Quotes & Code (The last two icons in the bar.)",
-          formatting: true,
-          links: true,
-          // images: {
-          //   directory: "/public/images/projects/individual/",
-          //   publicPath: "/images/projects/individual/",
-          //   schema: {
-          //     alt: fields.text({
-          //       label: "Image Alternate Text",
-          //       description:
-          //         "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
-          //       validation: {
-          //         length: { min: 1 },
-          //       },
-          //     }),
-          //     title: fields.text({
-          //       label: "Image Caption",
-          //       description: "This is optional. Displayed under the image.",
-          //     }),
-          //   },
-          // },
-        }),
-      },
-    }),
-
-    workshops: collection({
-      label: "Workshops",
-      path: "src/data/workshops/*",
-      slugField: "title",
-      schema: {
-        title: fields.slug({
-          name: {
-            label: "Title",
-            description: "Title of this Workshop.",
-          },
-          slug: {
-            label: "Slug",
-            description: "A unique url safe identifier for this workshop.",
-          },
-        }),
-        description: fields.text({
-          label: "Description",
-          description: "Displayed in the Workshop Card.",
-          validation: {
-            length: { min: 1 },
-          },
-        }),
-        image: fields.image({
-          label: "Image",
-          description:
-            "Displayed on the Workshop Card & prominently on the Workshop's page.",
-          validation: {
-            isRequired: true,
-          },
-          directory: "/public/images/workshops/",
-          publicPath: "/images/workshops/",
-        }),
-        imageAlt: fields.text({
-          label: "Image Alternate Text",
-          description:
-            "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
-          validation: {
-            length: { min: 1 },
-          },
-        }),
-        content: fields.document({
-          label: "Workshop Content",
-          description:
-            "Makes up the individual workshop page. ONLY use Paragraphs, Heading 2s and Heading 3s. We do not support Quotes & Code (The last two icons in the bar.)",
           formatting: true,
           links: true,
           // images: {

@@ -10,8 +10,8 @@ const MobileNavElements = ({
   pages,
 }: {
   pages: {
-    name: string
-    path: string
+    readonly name: string
+    readonly path: string
   }[]
 }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
@@ -51,7 +51,11 @@ const MobileNavElements = ({
         } fixed left-0 right-0 z-0 flex h-screen w-full flex-col items-center gap-5 bg-dark pt-32 text-xl text-light transition-all duration-300 md:pt-40 md:text-2xl lg:gap-9 2xl:hidden`}
       >
         {pages.map((page, i) => (
-          <NavLink key={i} page={page} />
+          <NavLink
+            key={i}
+            page={page}
+            onClick={() => setIsHamburgerOpen(false)}
+          />
         ))}
         <Link href="/support" onClick={() => setIsHamburgerOpen(false)}>
           <Button text="Support Us" type="Primary" theme="Dark" />
