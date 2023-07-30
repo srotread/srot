@@ -1,14 +1,16 @@
-metaTitle: Team
-metaDescription: Something
+metaTitle: Srot Foundation Team
+metaDescription: >-
+  Get to know the people behind the work of the Srot Rural Education and
+  Development Foundation.
 headline: Our Team
 teamSections:
-  - designation: Founders
+  - designation: Directors
     description: For them their work is a logical extension of their own lives.
     members:
       - image: /images/team/teamSections/0/members/0/image.png
         imageAlt: Something
-        name: Founder's Name - Something
-        title: Founder's Title
+        name: Mahima Mehra
+        title: Founder, Director
         description: >-
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -16,8 +18,8 @@ teamSections:
           scrambled it to make a type specimen book.
       - image: /images/team/teamSections/0/members/1/image.png
         imageAlt: Something
-        name: Founder's Name - Something
-        title: Founder's Title
+        name: Panki Sood
+        title: Founder, Director
         description: >-
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -25,13 +27,18 @@ teamSections:
           scrambled it to make a type specimen book.
       - image: /images/team/teamSections/0/members/2/image.png
         imageAlt: Something
-        name: Founder's Name - Something
-        title: Founder's Title
+        name: Parth Phalke
+        title: Founder, Director
         description: >-
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book.
+      - image: /images/team/teamSections/0/members/3/image.jpg
+        imageAlt: something
+        name: Mohit Singla
+        title: Director
+        description: something something
   - designation: Co-ordinators
     members:
       - image: /images/team/teamSections/1/members/0/image.png
