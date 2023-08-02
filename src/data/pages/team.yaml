@@ -8,37 +8,63 @@ teamSections:
     description: For them their work is a logical extension of their own lives.
     members:
       - image: /images/team/teamSections/0/members/0/image.png
-        imageAlt: Something
+        imageAlt: >-
+          Mahima is a consultant for rural development and education projects
+          working with many organizations like Ummeed foundation and Spectrum.
+          She is also a member of All India Council of Human Rights, Liberties
+          and Social Justice as well as National Council of News and
+          Broadcasting.
         name: Mahima Mehra
         title: Founder, Director
         description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          Mahima actively works as a consultant for rural development and
+          education projects. She is a member of All India Council of Human
+          Rights, Liberties and Social Justice and also of National Council of
+          News and Broadcasting besides working with organizations like Ummeed
+          Foundation, Spectrum and Nomadlawyers. She believes education can
+          bring about real change in the lives of people. 
       - image: /images/team/teamSections/0/members/1/image.png
-        imageAlt: Something
+        imageAlt: >-
+          Panki is a tourism professional, trained mountaineer, passionate
+          photographer and birdwatcher who is actively involved with social
+          development projects across kullu district. He is also involved with
+          drug de-addiction counselling and is a 2 time TEDx speaker. 
         name: Panki Sood
         title: Founder, Director
         description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          Panki runs the Sunshine Himalayan Cottage in Tirthan and is a
+          co-founder of Himalayan Volunteer Tourism. He is a qualified
+          mountaineer, bird watcher and a passionate photographer besides being
+          a tourism professional. He is actively involved with drug de-addiction
+          counselling and is committed to social development projects across
+          Kullu district. He is also a 2-time TEDx speaker.
       - image: /images/team/teamSections/0/members/2/image.png
-        imageAlt: Something
+        imageAlt: >-
+          Parth is an educator since 2007 and has worked in alternative
+          education including 8 years at Sahyadri School, KFI. He is a keen
+          observer of the world around him.  
         name: Parth Phalke
         title: Founder, Director
         description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          Parth is an educator teaching since 2007. He has worked mostly in
+          alternative education organizations including 8 years at Sahyadri
+          School KFI. He enjoys keenly observing the world around him and is
+          convinced education begins with observation and questioning. 
       - image: /images/team/teamSections/0/members/3/image.jpg
-        imageAlt: something
+        imageAlt: >-
+          Mohit, an engineer, has been working in the media and entertainment
+          industry for 16 years. He enjoys travel, meeting people and having
+          meaningful conversations. He has a special interest in art education. 
         name: Mohit Singla
         title: Director
-        description: something something
+        description: >-
+          Mohit is an engineer. After working for a few years with companies
+          like Mahindra and Citigroup he switched to his real interest, the
+          media and entertainment. It has been 16 years now that he has been
+          working in the industry and at present he is working as a casting
+          director for advertising. He enjoys travelling, meeting people and
+          having meaningful conversations with them. He also has a special
+          interest in art education. 
   - designation: Facilitation Team
     description: Our dedicated group of Facilitators
     members:
