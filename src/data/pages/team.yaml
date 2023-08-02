@@ -5,7 +5,6 @@ metaDescription: >-
 headline: Our Team
 teamSections:
   - designation: Directors
-    description: For them their work is a logical extension of their own lives.
     members:
       - image: /images/team/teamSections/0/members/0/image.jpg
         imageAlt: >-
@@ -68,7 +67,6 @@ teamSections:
           having meaningful conversations with them. He also has a special
           interest in art education. 
   - designation: Facilitation Team
-    description: Our dedicated group of Facilitators
     members:
       - image: /images/team/teamSections/1/members/0/image.jpeg
         imageAlt: >-
