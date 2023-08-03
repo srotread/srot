@@ -10,13 +10,6 @@ image: /images/work/image.jpg
 imageAlt: Something
 involvedHeadline: How to get involved
 involvements:
-  - title: Become an Associate Partner
-    description: >-
-      Associate partners work with us on specific projects, conducting workshops
-      based on their expertise, when they have time. They regularly offer their
-      time to our projects. We do take time to decide upon an associate partner
-      and usually between 6-8 months of a regular association is necessary to
-      become an associate.
   - title: Become a Volunteer
     description: >+
       If you are interested in the work we do, would like to work with us for a
@@ -25,11 +18,4 @@ involvements:
       his/her own.
 
 
-  - title: Become an Intern
-    description: >-
-      If you are a student and would like to join us to explore the work we do
-      and gain some experience at the same time, you could intern with us. All
-      interns who wish to work on-site will have to pay for their own stay and
-      food. All interns will be given a certificate of internship upon
-      completion of the internship.
 testimonialsHeadline: What people say about Us
