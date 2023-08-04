@@ -4,7 +4,6 @@ import reader from "@/lib/keystatic"
 import { KeystaticContentNotFoundError } from "@/lib/exceptions"
 
 import Button from "@/components/Button"
-import DonateButton from "@/components/DonateButton"
 
 async function getPageData() {
   const supportpage = await reader.singletons.supportpage.read()
@@ -54,7 +53,7 @@ export async function generateMetadata() {
 }
 
 const Support = async (): Promise<JSX.Element> => {
-  const { headline, image, imageAlt, statistics, content } = (
+  const { headline, image, imageAlt, statistics, content, donationUrl, cta } = (
     await getPageData()
   ).page
 
@@ -84,7 +83,7 @@ const Support = async (): Promise<JSX.Element> => {
             <p className="mt-9 text-xl lg:text-2xl 2xl:mt-16 2xl:text-3xl">
               {content}
             </p>
-            {/* <a
+            <a
               href={donationUrl}
               className="mt-8 inline-block text-xl lg:text-2xl 2xl:mt-12 3xl:text-3xl"
             >
@@ -93,10 +92,7 @@ const Support = async (): Promise<JSX.Element> => {
                 theme="Light"
                 type="Primary"
               />
-            </a> */}
-            <div className="mt-8">
-              <DonateButton />
-            </div>
+            </a>
           </div>
         </div>
 
