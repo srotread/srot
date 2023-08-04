@@ -85,6 +85,7 @@ const Support = async (): Promise<JSX.Element> => {
             </p>
             <a
               href={donationUrl}
+              target="_blank"
               className="mt-8 inline-block text-xl lg:text-2xl 2xl:mt-12 3xl:text-3xl"
             >
               <Button
