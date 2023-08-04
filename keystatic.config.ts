@@ -808,15 +808,6 @@ export default config({
           label: "Content Paragraph shown under the statistics.",
           validation: { length: { min: 1 } },
         }),
-        cta: fields.text({
-          label: "Call to Action - Donation Button.",
-          description:
-            "Defaults to 'Donate now'. Feel free to experiment and see what works best for you.",
-        }),
-        donationUrl: fields.url({
-          label: "Donation Button URL",
-          validation: { isRequired: true },
-        }),
       },
     }),
   },
