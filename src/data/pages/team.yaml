@@ -1,101 +1,110 @@
-metaTitle: Team
-metaDescription: Something
+metaTitle: Srot Foundation Team
+metaDescription: >-
+  Get to know the people behind the work of the Srot Rural Education and
+  Development Foundation.
 headline: Our Team
 teamSections:
-  - designation: Founders
-    description: For them their work is a logical extension of their own lives.
+  - designation: Directors
     members:
-      - image: /images/team/teamSections/0/members/0/image.png
-        imageAlt: Something
-        name: Founder's Name - Something
-        title: Founder's Title
+      - image: /images/team/teamSections/0/members/0/image.jpg
+        imageAlt: >-
+          Mahima is a consultant for rural development and education projects
+          working with many organizations like Ummeed foundation and Spectrum.
+          She is also a member of All India Council of Human Rights, Liberties
+          and Social Justice as well as National Council of News and
+          Broadcasting.
+        name: Mahima Mehra
+        title: Founder, Director
         description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-      - image: /images/team/teamSections/0/members/1/image.png
-        imageAlt: Something
-        name: Founder's Name - Something
-        title: Founder's Title
+          Mahima actively works as a consultant for rural development and
+          education projects. She is a member of All India Council of Human
+          Rights, Liberties and Social Justice and also of National Council of
+          News and Broadcasting besides working with organizations like Ummeed
+          Foundation, Spectrum and Nomadlawyers. She believes education can
+          bring about real change in the lives of people. 
+      - image: /images/team/teamSections/0/members/1/image.jpg
+        imageAlt: >-
+          Panki is a tourism professional, trained mountaineer, passionate
+          photographer and birdwatcher who is actively involved with social
+          development projects across kullu district. He is also involved with
+          drug de-addiction counselling and is a 2 time TEDx speaker. 
+        name: Panki Sood
+        title: Founder, Director
         description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-      - image: /images/team/teamSections/0/members/2/image.png
-        imageAlt: Something
-        name: Founder's Name - Something
-        title: Founder's Title
+          Panki runs the Sunshine Himalayan Cottage in Tirthan and is a
+          co-founder of Himalayan Volunteer Tourism. He is a qualified
+          mountaineer, bird watcher and a passionate photographer besides being
+          a tourism professional. He is actively involved with drug de-addiction
+          counselling and is committed to social development projects across
+          Kullu district. He is also a 2-time TEDx speaker.
+      - image: /images/team/teamSections/0/members/2/image.jpg
+        imageAlt: >-
+          Parth is an educator since 2007 and has worked in alternative
+          education including 8 years at Sahyadri School, KFI. He is a keen
+          observer of the world around him.  
+        name: Parth Phalke
+        title: Founder, Director
         description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-  - designation: Co-ordinators
+          Parth is an educator teaching since 2007. He has worked mostly in
+          alternative education organizations including 8 years at Sahyadri
+          School KFI. He enjoys keenly observing the world around him and is
+          convinced education begins with observation and questioning. He is
+          actively involved in the project on ground and has been teaching the
+          local children full-time since 2020 as well. 
+      - image: /images/team/teamSections/0/members/3/image.jpg
+        imageAlt: >-
+          Mohit, an engineer, has been working in the media and entertainment
+          industry for 16 years. He enjoys travel, meeting people and having
+          meaningful conversations. He has a special interest in art education. 
+        name: Mohit Singla
+        title: Director
+        description: >-
+          Mohit is an engineer. After working for a few years with companies
+          like Mahindra and Citigroup he switched to his real interest, the
+          media and entertainment. It has been 16 years now that he has been
+          working in the industry and at present he is working as a casting
+          director for advertising. He enjoys travelling, meeting people and
+          having meaningful conversations with them. He also has a special
+          interest in art education. 
+  - designation: Facilitation Team
     members:
-      - image: /images/team/teamSections/1/members/0/image.png
-        imageAlt: Something
-        name: Co-ordinator's Name
-        title: Co-ordinator's Title
+      - image: /images/team/teamSections/1/members/0/image.jpeg
+        imageAlt: >-
+          Devanshi is an architect who is a key part of the team. She works with
+          kids across age groups and they love being around her. 
+        name: Devanshi Shah
+        title: Facilitator
         description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-      - image: /images/team/teamSections/1/members/1/image.png
-        imageAlt: Something
-        name: Co-ordinator's Name
-        title: Co-ordinator's Title
+          Devanshi is an Architect by training and joined us in June 2022 after
+          working at an architecture and interior design firm in Mumbai for 2
+          years. She has been instrumental in stabilising the project in Tirthan
+          by capably taking over some tasks. She works with the kids across age
+          groups and the kids love being around her. 
+      - image: /images/team/teamSections/1/members/1/image.jpg
+        imageAlt: >-
+          Chandni is a local teacher with a Master's degree in History. She is
+          dedicated to helping children learn better as well as to her own
+          continued learning and growth. 
+        name: Chandni Bisht
+        title: Facilitator
         description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-      - image: /images/team/teamSections/1/members/2/image.png
-        imageAlt: Something
-        name: Co-ordinator's Name
-        title: Co-ordinator's Title
+          Chandni is a local from Tirthan. She completed her MA with History and
+          was looking for teaching jobs when we found her. She joined us in July
+          2022. Very interested in and dedicated to helping children learn, she
+          is equally interested in her own continued learning and growth. Very
+          jovial and easy to work with, she has been a great addition to the
+          team.
+      - image: /images/team/teamSections/1/members/2/image.jpg
+        imageAlt: >-
+          Pushpa is a local teacher with a Master's in Commerce. She is always
+          looking to improve as a facilitator and her calm personality makes it
+          easier for kids to work with her. 
+        name: Pushpa Devi
+        title: Facilitator
         description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-  - designation: Associate Partners
-    members:
-      - image: /images/team/teamSections/2/members/0/image.png
-        imageAlt: Something
-        name: Associate Partner's Name
-        title: Associate Partner's Title
-        description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-      - image: /images/team/teamSections/2/members/1/image.png
-        imageAlt: Something
-        name: Associate Partner's Name
-        title: Associate Partner's Title
-        description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-      - image: /images/team/teamSections/2/members/2/image.png
-        imageAlt: Something
-        name: Associate Partner's Name
-        title: 'Associate Partner''s Title '
-        description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-      - image: /images/team/teamSections/2/members/3/image.png
-        imageAlt: Something
-        name: Associate Partner's Name
-        title: Associate Partner's Title
-        description: >-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          Pushpa belongs to Tirthan valley and has a Master's degree in
+          Commerce. She joined us in March 2023. Her interest in teaching gained
+          strength after the birth of her two daughters and she is always
+          looking to learn new and better ways to help children learn. Her
+          simplicity and calm make it easy for the kids to feel comfortable
+          around her and learn. 

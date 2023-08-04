@@ -1,21 +1,16 @@
-metaTitle: Work with Us
-metaDescription: Something
-headline: Work with Us
+metaTitle: Volunteer with Us
+metaDescription: >-
+  Find a meaningful volunteering opportunity at Srot Rural Education and
+  Development Foundation. 
+headline: Volunteer with Us
 subheadline: >-
-  If you find our work interesting and wish to work with us, here are a few ways
-  you can get involved:
-image: /images/work/image.png
+  If you find our work interesting and wish to volunteer with us, here are a few
+  ways you can get involved:
+image: /images/work/image.jpg
 imageAlt: Something
 involvedHeadline: How to get involved
 involvements:
-  - title: Become an Associate Partner
-    description: >-
-      Associate partners work with us on specific projects, conducting workshops
-      based on their expertise, when they have time. They regularly offer their
-      time to our projects. We do take time to decide upon an associate partner
-      and usually between 6-8 months of a regular association is necessary to
-      become an associate.
-  - title: Become a Volunteer
+  - title: Become a Full-time Volunteer
     description: >+
       If you are interested in the work we do, would like to work with us for a
       short period of time and offer your expertise, you could join us as a
@@ -23,11 +18,8 @@ involvements:
       his/her own.
 
 
-  - title: Become an Intern
-    description: >-
-      If you are a student and would like to join us to explore the work we do
-      and gain some experience at the same time, you could intern with us. All
-      interns who wish to work on-site will have to pay for their own stay and
-      food. All interns will be given a certificate of internship upon
-      completion of the internship.
+  - title: Become a Part-time Volunteer
+    description: ggg
+  - title: Volunteer from Remote Location
+    description: ggg
 testimonialsHeadline: What people say about Us
