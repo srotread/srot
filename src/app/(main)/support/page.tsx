@@ -1,4 +1,3 @@
-import Link from "next/link"
 import ImageWithBorder from "@/components/ImageWithBorder"
 import Button from "@/components/Button"
 
@@ -83,7 +82,7 @@ const Support = async (): Promise<JSX.Element> => {
             <p className="mt-9 text-xl lg:text-2xl 2xl:mt-16 2xl:text-3xl">
               {content}
             </p>
-            <Link
+            <a
               href={donationUrl}
               className="mt-8 inline-block text-xl lg:text-2xl 2xl:mt-12 3xl:text-3xl"
             >
@@ -92,7 +91,7 @@ const Support = async (): Promise<JSX.Element> => {
                 theme="Light"
                 type="Primary"
               />
-            </Link>
+            </a>
           </div>
         </div>
 
