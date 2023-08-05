@@ -819,6 +819,90 @@ export default config({
         }),
       },
     }),
+
+    privacy: singleton({
+      label: "Privacy Policy Page",
+      path: "src/data/pages/privacy",
+      schema: {
+        metaTitle: fields.text({
+          label: "Metadata Title",
+          description:
+            "This is the metadata title of the site. It will be prepended to the Site Title in Site Settings. It will be displayed when this page is shared, in the browser tab and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        metaDescription: fields.text({
+          label: "Metadata Description",
+          description:
+            "This is the metadata description of the site. It will be displayed when this site is shared and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        content: fields.document({
+          label: "Privacy Policy Content",
+          formatting: true,
+          links: true,
+        }),
+      },
+    }),
+
+    terms: singleton({
+      label: "Terms of Service Page",
+      path: "src/data/pages/terms",
+      schema: {
+        metaTitle: fields.text({
+          label: "Metadata Title",
+          description:
+            "This is the metadata title of the site. It will be prepended to the Site Title in Site Settings. It will be displayed when this page is shared, in the browser tab and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        metaDescription: fields.text({
+          label: "Metadata Description",
+          description:
+            "This is the metadata description of the site. It will be displayed when this site is shared and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        content: fields.document({
+          label: "Terms of Service Content",
+          formatting: true,
+          links: true,
+        }),
+      },
+    }),
+
+    refund: singleton({
+      label: "Refund Policy Page",
+      path: "src/data/pages/refund",
+      schema: {
+        metaTitle: fields.text({
+          label: "Metadata Title",
+          description:
+            "This is the metadata title of the site. It will be prepended to the Site Title in Site Settings. It will be displayed when this page is shared, in the browser tab and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        metaDescription: fields.text({
+          label: "Metadata Description",
+          description:
+            "This is the metadata description of the site. It will be displayed when this site is shared and used by search engines to rank this page.",
+          validation: {
+            length: { min: 1 },
+          },
+        }),
+        content: fields.document({
+          label: "Refund Policy Content",
+          formatting: true,
+          links: true,
+        }),
+      },
+    }),
   },
 
   collections: {
