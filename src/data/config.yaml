@@ -15,7 +15,7 @@ pages:
   - text: Team
     path: /team
   - text: Volunteer with Us
-    path: /volunteer
+    path: /work
   - text: Contact Us
     path: /contact
 address: >-
