@@ -842,6 +842,7 @@ export default config({
         }),
         content: fields.document({
           label: "Privacy Policy Content",
+          description: "Use only Heading 2 and above. No Heading 1. Images are not supported.",
           formatting: true,
           links: true,
         }),
@@ -870,6 +871,7 @@ export default config({
         }),
         content: fields.document({
           label: "Terms of Service Content",
+          description: "Use only Heading 2 and above. No Heading 1. Images are not supported.",
           formatting: true,
           links: true,
         }),
@@ -898,6 +900,7 @@ export default config({
         }),
         content: fields.document({
           label: "Refund Policy Content",
+          description: "Use only Heading 2 and above. No Heading 1. Images are not supported.",
           formatting: true,
           links: true,
         }),
