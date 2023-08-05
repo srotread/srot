@@ -20,4 +20,4 @@ supportCTAs:
     path: /support
   secondaryCTA:
     text: Get involved
-    path: /volunteer
+    path: /work
