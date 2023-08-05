@@ -13,11 +13,11 @@ projectsHeadline: Our Projects
 projectsSubheadline: Your support helps fund projects like these.
 testimonialsHeadline: What People Say About Us
 supportHeadline: Support Us
-supportSubheadline: This is a subheadline. Encourages people to donate
+supportSubheadline: Your support enables us to support the children we work with!
 supportCTAs:
   primaryCTA:
     text: Donate now
     path: /support
   secondaryCTA:
     text: Get involved
-    path: /work
+    path: /volunteer
