@@ -1,4 +1,5 @@
 import { Bitter } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 
 import Footer from "@/components/Footer"
@@ -69,6 +70,11 @@ export default function MainLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="The Srot Foundation" />
       </head>
+      <Script
+        strategy="lazyOnload"
+        src="https://neesh-umami.vercel.app/script.js"
+        data-website-id="13d7f4ef-b903-4188-b145-a416895e10ab"
+      />
       <body className="font-primary">
         <Navbar />
         {children}
