@@ -1,19 +1,19 @@
 metaTitle: Home
-metaDescription: Something
+metaDescription: Home of the Srot Rural Education and Development Foundation
 headline: Srot Foundation
 subheadline: >-
   We are convinced that a truly educated world alone shall be peaceful,
   prosperous and in harmony with nature. Therefore, education must be holistic,
   helping the ‘human’ in us grow as it trains us for livelihood.
-backgroundImage: /images/home/backgroundImage.png
+backgroundImage: /images/home/backgroundImage.jpg
 backgroundImageAlt: Background image - Group photo of Srot students and teachers
-storyImage: /images/home/storyImage.png
+storyImage: /images/home/storyImage.jpg
 storyImageAlt: Something - please be descriptive
 projectsHeadline: Our Projects
 projectsSubheadline: Your support helps fund projects like these.
 testimonialsHeadline: What People Say About Us
 supportHeadline: Support Us
-supportSubheadline: This is a subheadline. Encourages people to donate
+supportSubheadline: Your support enables us to support the children we work with!
 supportCTAs:
   primaryCTA:
     text: Donate now

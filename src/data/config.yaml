@@ -14,7 +14,7 @@ pages:
     path: /media
   - text: Team
     path: /team
-  - text: Work with Us
+  - text: Volunteer with Us
     path: /work
   - text: Contact Us
     path: /contact
