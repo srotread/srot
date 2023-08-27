@@ -35,9 +35,9 @@ gallerySections:
         caption: Test caption 3
   - title: Excursions & Field Trips
     images:
-      - image: /images/media/gallerySections/3/images/0/image.png
+      - image: /images/media/gallerySections/3/images/0/image.jpg
         imageAlt: Image 1
-      - image: /images/media/gallerySections/3/images/1/image.png
+      - image: /images/media/gallerySections/3/images/1/image.jpg
         imageAlt: Image 2
-      - image: /images/media/gallerySections/3/images/2/image.png
+      - image: /images/media/gallerySections/3/images/2/image.jpg
         imageAlt: Image 3
