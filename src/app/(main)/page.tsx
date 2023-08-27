@@ -172,9 +172,9 @@ const Home = async (): Promise<JSX.Element> => {
         <h2 className="mb-16 inline-block text-[32px] font-bold underline decoration-accent underline-offset-8 md:block md:text-4xl 3xl:text-5xl">
           {testimonialsHeadline}
         </h2>
-        <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-14 sm:grid-cols-2">
           {testimonials.map(({ slug, entry }) => {
-            const { quote, image, imageAlt, name, title } = entry
+            const { quote, image, imageAlt, title } = entry
 
             return (
               <Testimonial
