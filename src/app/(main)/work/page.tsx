@@ -148,7 +148,7 @@ const Work = async (): Promise<JSX.Element> => {
 
         <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2">
           {testimonials.map(({ slug, entry }) => {
-            const { quote, image, imageAlt, name, title } = entry
+            const { quote, image, imageAlt, title } = entry
 
             return (
               <Testimonial
