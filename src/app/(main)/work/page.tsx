@@ -119,7 +119,7 @@ const Work = async (): Promise<JSX.Element> => {
               className="flex flex-col justify-between gap-12 overflow-hidden rounded bg-dark p-4 text-light"
             >
               <div className="flex flex-col gap-4">
-                <div className="h-1 w-24 rounded-[1px] bg-accent" />
+                <div className="h-1.5 h-[2px] w-40 rounded-full bg-accent" />
                 <h6 className="text-xl font-bold 2xl:text-2xl">{title}</h6>
                 <p className="text-base font-light md:text-lg 3xl:text-xl">
                   {description}
