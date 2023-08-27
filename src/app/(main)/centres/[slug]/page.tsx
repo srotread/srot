@@ -69,8 +69,6 @@ const Centre = async ({ params }: Props): Promise<JSX.Element> => {
     },
   ]
 
-  console.log(sidebar)
-
   return (
     <SidebarLayout
       title={name}
