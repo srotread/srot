@@ -82,7 +82,7 @@ const Team = async (): Promise<JSX.Element> => {
                   />
                 </div>
 
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-2">
                   <div className="h-1 w-24 rounded-[1px] bg-accent" />
                   <h6 className="text-xl font-bold 2xl:text-2xl">{name}</h6>
                   <p className="text-lg 3xl:text-xl">{title}</p>
