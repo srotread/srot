@@ -144,7 +144,7 @@ const Home = async (): Promise<JSX.Element> => {
 
             return (
               <Card
-                key={slug}
+                key={`projects/${slug}`}
                 type="Project"
                 img={image}
                 alt={imageAlt}
