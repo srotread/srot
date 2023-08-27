@@ -55,7 +55,7 @@ const Project = async ({ params }: Props): Promise<JSX.Element> => {
     throw new KeystaticContentNotFoundError(`Projects Collection`)
   }
 
-  const { title, content } = project
+  const { title, image, imageAlt, content } = project
 
   const remainingProjects = projects.filter((project) => project.slug !== slug)
 
@@ -77,9 +77,10 @@ const Project = async ({ params }: Props): Promise<JSX.Element> => {
   return (
     <SidebarLayout
       title={title}
+      image={image}
+      imageAlt={imageAlt}
       document={content}
       bgClr="bg-dark"
-      txtClr="text-light"
       sidebar={sidebar}
     />
   )

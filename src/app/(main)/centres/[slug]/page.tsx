@@ -50,7 +50,7 @@ const Centre = async ({ params }: Props): Promise<JSX.Element> => {
   if (!centre) notFound()
   if (!centres) throw new KeystaticContentNotFoundError("Centres Collection")
 
-  const { name, content } = centre
+  const { name, image, imageAlt, content } = centre
 
   const remainingCentres = centres.filter((centre) => centre.slug !== slug)
 
@@ -69,12 +69,15 @@ const Centre = async ({ params }: Props): Promise<JSX.Element> => {
     },
   ]
 
+  console.log(sidebar)
+
   return (
     <SidebarLayout
       title={name}
+      image={image}
+      imageAlt={imageAlt}
       document={content}
       bgClr="bg-light"
-      txtClr="text-dark"
       sidebar={sidebar}
     />
   )
