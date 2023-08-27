@@ -41,7 +41,7 @@ export default function NotFound() {
         <meta name="author" content="The Srot Foundation" />
       </head>
       <body className="font-primary">
-        <main className="px-col-outer text-center text-dark bg-light lg:px-col-inner relative">
+        <main className="relative bg-light px-col-outer text-center text-dark lg:px-col-inner">
           <h1 className="pt-28 text-4xl font-bold underline decoration-accent md:text-5xl lg:pt-40  2xl:text-6xl 3xl:text-7xl">
             404 - This page could not be found
           </h1>

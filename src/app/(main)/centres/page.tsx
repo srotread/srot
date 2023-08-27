@@ -77,7 +77,7 @@ const Centres = async (): Promise<JSX.Element> => {
         </p>
       </main>
 
-      <section className="flex flex-col gap-24 bg-light py-16 text-dark lg:py-36 px-col-outer lg:px-col-inner xl:px-0 3xl:px-col-inner">
+      <section className="flex flex-col gap-24 bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36 xl:px-0 3xl:px-col-inner">
         {centres.map(({ slug, entry }, i) => {
           const { name, description, image, imageAlt } = entry
 
@@ -99,13 +99,13 @@ const Centres = async (): Promise<JSX.Element> => {
                 />
               </div>
 
-              <p className="text-lg 3xl:text-xl mt-9 leading-8">
+              <p className="mt-9 text-lg leading-8 3xl:text-xl">
                 {description}
               </p>
 
               <Link
                 href={`/centres/${slug}`}
-                className="inline-block mt-9 text-xl 3xl:text-2xl"
+                className="mt-9 inline-block text-xl 3xl:text-2xl"
               >
                 <Button
                   text="Find out more"

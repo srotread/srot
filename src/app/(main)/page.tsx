@@ -49,13 +49,13 @@ const Home = async (): Promise<JSX.Element> => {
 
   return (
     <>
-      <main className="px-col-outer text-center text-light lg:px-col-inner relative">
+      <main className="relative px-col-outer text-center text-light lg:px-col-inner">
         <Image
           src={backgroundImage}
           alt={backgroundImageAlt}
           fill
           priority
-          className="object-cover w-screen h-full -z-10"
+          className="-z-10 h-full w-screen object-cover"
         />
 
         <h1 className="pt-28 text-4xl font-bold underline decoration-accent md:text-5xl lg:pt-40  2xl:text-6xl 3xl:text-7xl">
@@ -95,7 +95,7 @@ const Home = async (): Promise<JSX.Element> => {
           </div>
 
           {storyDescription && (
-            <div className="prose prose-invert prose-lg lg:prose-xl 3xl:prose-2xl text-light marker:text-light mt-9">
+            <div className="prose prose-lg prose-invert mt-9 text-light lg:prose-xl 3xl:prose-2xl marker:text-light">
               <DocumentRenderer document={storyDescription} />
             </div>
           )}
@@ -190,15 +190,15 @@ const Home = async (): Promise<JSX.Element> => {
         </div>
       </section>
 
-      <section className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36 text-center relative">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative bg-light px-col-outer py-16 text-center text-dark lg:px-col-inner lg:py-36">
+        <div className="mx-auto max-w-5xl">
           <h2 className="text-4xl font-bold underline decoration-accent md:text-5xl  2xl:text-6xl 3xl:text-7xl">
             {supportHeadline}
           </h2>
           <p className="mb-6 mt-8 text-xl md:mb-12 md:mt-14 md:text-2xl 2xl:text-3xl">
             {supportSubheadline}
           </p>
-          <div className="flex flex-row items-center justify-center gap-4 md:gap-8 text-lg md:text-xl 2xl:text-2xl">
+          <div className="flex flex-row items-center justify-center gap-4 text-lg md:gap-8 md:text-xl 2xl:text-2xl">
             <Link href={primaryCTA.path}>
               <Button
                 text={primaryCTA.text}

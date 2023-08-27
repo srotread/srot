@@ -39,10 +39,10 @@ const TermsOfService = async () => {
 
   return (
     <main className="bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36">
-      <h1 className="text-4xl font-bold underline decoration-accent md:text-5xl 2xl:text-6xl 3xl:text-7xl">
+      <h1 className="mb-14 text-4xl font-bold underline decoration-accent md:text-5xl 2xl:text-6xl 3xl:text-7xl">
         Terms of Service
       </h1>
-      <article className="prose prose-lg lg:prose-xl 3xl:prose-2xl marker:text-dark mt-9">
+      <article className="prose prose-lg mt-9 lg:prose-xl 3xl:prose-2xl marker:text-dark">
         <DocumentRenderer document={content} />
       </article>
     </main>

@@ -16,7 +16,7 @@ export default async function Navbar() {
   const { logo, pages } = settings
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-10 flex items-center justify-between bg-light px-col-outer">
+    <nav className="sticky left-0 right-0 top-0 z-10 flex items-center justify-between bg-light px-col-outer">
       <Link href="/">
         <div className="relative aspect-logo h-16 3xl:h-20">
           <Image

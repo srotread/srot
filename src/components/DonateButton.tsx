@@ -9,7 +9,7 @@ const DonateButton = () => {
     const Form = document.getElementById("donateForm")
     Script.setAttribute(
       "src",
-      "https://checkout.razorpay.com/v1/payment-button.js"
+      "https://checkout.razorpay.com/v1/payment-button.js",
     )
     Script.setAttribute("data-payment_button_id", "pl_J5o4CjtynlT5JH")
     Form!.appendChild(Script)

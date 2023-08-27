@@ -18,7 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     (path) => ({
       url: `${url}/projects/${path}`,
       lastModified: new Date(),
-    })
+    }),
   )
   const centresUrls = (await reader.collections.centres.list()).map((path) => ({
     url: `${url}/centres/${path}`,

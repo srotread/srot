@@ -72,7 +72,7 @@ const Media = async (): Promise<JSX.Element> => {
           <div className="mt-9 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2 2xl:grid-cols-3 4xl:max-w-screen-2xl">
             {images.map(({ image, imageAlt, caption }, i) => (
               <div key={i} className="">
-                <div className="relative w-full h-80">
+                <div className="relative h-80 w-full">
                   <ImageWithBorder
                     src={image}
                     alt={imageAlt}

@@ -17,7 +17,7 @@ export default async function Footer() {
   const { address, email, numbers, instagram, facebook } = settings
 
   return (
-    <footer className="flex flex-col bg-dark px-col-outer pt-32 space-y-24 pb-24 text-lg text-light ">
+    <footer className="flex flex-col space-y-24 bg-dark px-col-outer pb-24 pt-32 text-lg text-light ">
       <div className="flex flex-col flex-wrap items-center justify-between gap-12 text-center md:flex-row md:items-start md:text-start">
         <div>
           <h6 className="mb-6 text-xl">Regd. Address</h6>
@@ -114,7 +114,7 @@ export default async function Footer() {
         </Link>
       </div>
 
-      <p className="text-base md:flex-row md:gap-4 md:text-lg block text-center">
+      <p className="block text-center text-base md:flex-row md:gap-4 md:text-lg">
         Built with ❤️ by{" "}
         <Link href="/" className="pl-2 text-accent">
           Neesh Samsi

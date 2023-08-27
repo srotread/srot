@@ -95,7 +95,7 @@ const Story = async (): Promise<JSX.Element> => {
         </div>
       </main>
 
-      <section className="flex flex-col gap-24 bg-light py-16 text-dark lg:py-36 px-col-outer lg:px-col-inner xl:px-0 4xl:px-col-inner">
+      <section className="flex flex-col gap-24 bg-light px-col-outer py-16 text-dark lg:px-col-inner lg:py-36 xl:px-0 4xl:px-col-inner">
         {contentSections.map(({ title, content, image, imageAlt }, i) => {
           const isOdd = i % 2 === 0
 
@@ -115,7 +115,7 @@ const Story = async (): Promise<JSX.Element> => {
                 />
               </div>
 
-              <div className="prose prose-lg 3xl:prose-xl marker:text-dark mt-9 xl:mt-0">
+              <div className="prose prose-lg mt-9 3xl:prose-xl marker:text-dark xl:mt-0">
                 <DocumentRenderer document={content} />
               </div>
             </div>

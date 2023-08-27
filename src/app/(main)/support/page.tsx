@@ -69,7 +69,7 @@ const Support = async (): Promise<JSX.Element> => {
             <div className="relative mt-10 block aspect-[4/3] xl:hidden">
               <ImageWithBorder src={image} alt={imageAlt} sizes="" />
             </div>
-            <div className="mt-9 grid grid-cols-3 text-base font-extralight sm:text-xl lg:text-2xl 2xl:mt-16 2xl:text-3xl gap-8">
+            <div className="mt-9 grid grid-cols-3 gap-8 text-base font-extralight sm:text-xl lg:text-2xl 2xl:mt-16 2xl:text-3xl">
               {statistics.map(({ cta, number, noun }) => (
                 <div key={noun} className="flex flex-col">
                   <p>{cta}</p>

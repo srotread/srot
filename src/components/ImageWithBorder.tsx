@@ -20,7 +20,7 @@ const ImageWithBorder: FC<ImgWBorderProps> = ({
       <Image
         src={src}
         alt={alt}
-        className="pointer-events-none object-cover transition-transform peer-hover:translate-x-1 peer-hover:-translate-y-1"
+        className="pointer-events-none object-cover transition-transform peer-hover:-translate-y-1 peer-hover:translate-x-1"
         fill
         priority={priority}
         sizes={sizes}
