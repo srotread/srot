@@ -19,25 +19,32 @@ gallerySections:
     images:
       - image: /images/media/gallerySections/1/images/0/image.jpg
         imageAlt: Image 1
+        caption: Everyone loves to paint!
       - image: /images/media/gallerySections/1/images/1/image.jpg
         imageAlt: Image 2
-        caption: Test caption2
+        caption: Children participating in Art sessions.
       - image: /images/media/gallerySections/1/images/2/image.JPG
         imageAlt: Image 3
+        caption: 'Photography workshop: Learning to capture the beauty all around!'
   - title: Day to Day Activities
     images:
       - image: /images/media/gallerySections/2/images/0/image.JPG
         imageAlt: Image 1
+        caption: The younger students of the After School Programme
       - image: /images/media/gallerySections/2/images/1/image.jpg
         imageAlt: Image 2
+        caption: 'The older students... Padhte Raho Programme '
       - image: /images/media/gallerySections/2/images/2/image.jpg
         imageAlt: Image 3
-        caption: Test caption 3
+        caption: Some work and then... Some play, of course!
   - title: Excursions & Field Trips
     images:
       - image: /images/media/gallerySections/3/images/0/image.jpg
         imageAlt: Image 1
+        caption: Elephanta Caves - Mumbai Pune Excursion Oct 2022.
       - image: /images/media/gallerySections/3/images/1/image.jpg
         imageAlt: Image 2
+        caption: 'Learning Angling: Day out at the river!'
       - image: /images/media/gallerySections/3/images/2/image.jpg
         imageAlt: Image 3
+        caption: When it gets hot, the forests and the rivers are your best friends!
