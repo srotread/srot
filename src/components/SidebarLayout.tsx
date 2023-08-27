@@ -33,14 +33,14 @@ export default function SidebarLayout({
 
   return (
     <div
-      className={`grid grid-cols-1 lg:grid-cols-[6fr,4fr] 3xl:grid-cols-[7fr,3fr] px-col-outer py-16 xl:px-col-inner lg:py-36 gap-12 lg:gap-8 xl:gap-24 ${mainTxtBgClrs}`}
+      className={`grid grid-cols-1 gap-12 px-col-outer py-16 lg:grid-cols-[6fr,4fr] lg:gap-8 lg:py-36 xl:gap-24 xl:px-col-inner 3xl:grid-cols-[7fr,3fr] ${mainTxtBgClrs}`}
     >
       <main>
-        <div className="mb-9 aspect-[4/3] w-full relative">
+        <div className="relative mb-9 aspect-[4/3] w-full">
           <ImageWithBorder src={image} alt={imageAlt} sizes="" />
         </div>
 
-        <h1 className="text-3xl font-semibold md:text-4xl 2xl:text-5xl 3xl:text-6xl mb-9">
+        <h1 className="mb-9 text-3xl font-semibold md:text-4xl 2xl:text-5xl 3xl:text-6xl">
           {title}
         </h1>
 
@@ -51,12 +51,12 @@ export default function SidebarLayout({
         </div>
       </main>
       {!!sidebar[0].entries.length && (
-        <aside className={`grid gap-8 h-fit`}>
+        <aside className={`grid h-fit gap-8`}>
           {sidebar.map(({ title, entries }, i) => {
             return (
               <div
                 key={i}
-                className={`p-6 grid gap-4 rounded ${sidebarTxtBgClrs}`}
+                className={`grid gap-4 rounded p-6 ${sidebarTxtBgClrs}`}
               >
                 <h4 className="text-lg font-semibold md:text-xl 2xl:text-2xl 3xl:text-3xl">
                   {title}
