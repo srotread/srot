@@ -8,11 +8,11 @@ description:
   - >-
     We often hope for remarkable origin stories. But most stories are more
     commonplace than we might think.
-image: /images/story/image.png
+image: /images/story/image.jpg
 imageAlt: Something
 contentSections:
   - title: The Beginning
-    image: /images/story/contentSections/0/image.png
+    image: /images/story/contentSections/0/image.jpg
     imageAlt: Something
   - title: The Work Today!
     image: /images/story/contentSections/1/image.jpg
@@ -21,12 +21,12 @@ contentSections:
       mentoring them. The support is offered free as most of them belong to low
       income households. 
   - title: Why is Srot needed?
-    image: /images/story/contentSections/2/image.png
+    image: /images/story/contentSections/2/image.jpg
     imageAlt: >-
       We step in to fill the huge learning gaps and a mentorship vacuum in the
       lives of the students in Tirthan Valley. 
   - title: What Motivates Us?
-    image: /images/story/contentSections/3/image.png
+    image: /images/story/contentSections/3/image.jpg
     imageAlt: >-
       The fact that we do essential work of academic support and mentorship is
       what keeps us motivated.
