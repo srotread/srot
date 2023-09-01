@@ -57,6 +57,7 @@ const Home = async (): Promise<JSX.Element> => {
           priority
           className="-z-10 h-full w-screen object-cover"
         />
+        <div className="absolute inset-0 -z-10 h-full w-screen bg-dark/50" />
 
         <h1 className="pt-28 text-4xl font-bold underline decoration-accent md:text-5xl lg:pt-40  2xl:text-6xl 3xl:text-7xl">
           {headline}
