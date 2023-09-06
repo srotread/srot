@@ -32,6 +32,7 @@ export async function generateMetadata() {
   const description = metaDescription
 
   return {
+    metadataBase: new URL(url),
     title: {
       default: title,
       template: `%s ${siteTitle}`,
