@@ -145,7 +145,7 @@ const Home = async (): Promise<JSX.Element> => {
 
             return (
               <Card
-                key={`projects/${slug}`}
+                key={slug}
                 type="Project"
                 img={image}
                 alt={imageAlt}
@@ -153,7 +153,7 @@ const Home = async (): Promise<JSX.Element> => {
                 description={description}
                 btnType={i === 0 ? "Primary" : "Secondary"}
                 btnTxt="Find out more"
-                slug={slug}
+                slug={`/projects/${slug}`}
               />
             )
           })}
