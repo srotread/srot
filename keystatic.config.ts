@@ -57,7 +57,7 @@ export default config({
           {
             label: "Navigation Menu Links",
             itemLabel: (props) => props.fields.text.value,
-          }
+          },
         ),
         address: fields.text({
           label: "Address - Footer",
@@ -281,7 +281,7 @@ export default config({
             label: "Description paragraphs",
             description: "Shows under Story Headline & Srot means Source.",
             itemLabel: (props) => props.value,
-          }
+          },
         ),
         image: fields.image({
           label: "Image - Main section",
@@ -339,7 +339,7 @@ export default config({
             description:
               "Sections of Content comprising of side by side colums of a Title, Content & an Image.",
             itemLabel: (props) => props.fields.title.value,
-          }
+          },
         ),
       },
     }),
@@ -487,13 +487,13 @@ export default config({
               {
                 label: "Section Images",
                 itemLabel: (props) => props.fields.imageAlt.value,
-              }
+              },
             ),
           }),
           {
             label: "Gallery Sections",
             itemLabel: (props) => props.fields.title.value,
-          }
+          },
         ),
       },
     }),
@@ -582,13 +582,13 @@ export default config({
               {
                 label: "Team Members",
                 itemLabel: (props) => props.fields.name.value,
-              }
+              },
             ),
           }),
           {
             label: "Team Sections",
             itemLabel: (props) => props.fields.designation.value,
-          }
+          },
         ),
       },
     }),
@@ -668,7 +668,7 @@ export default config({
           {
             label: "Involvements",
             itemLabel: (props) => props.fields.title.value,
-          }
+          },
         ),
         testimonialsHeadline: fields.text({
           label: "Headline - Testimonials Section",
@@ -802,7 +802,7 @@ export default config({
             description:
               "For example: Join 30 Supporters, Nurture 30 Local Students",
             itemLabel: (props) => props.fields.noun.value,
-          }
+          },
         ),
         content: fields.text({
           label: "Content Paragraph shown under the statistics.",
@@ -842,7 +842,8 @@ export default config({
         }),
         content: fields.document({
           label: "Privacy Policy Content",
-          description: "Use only Heading 2 and above. No Heading 1. Images are not supported.",
+          description:
+            "Use only Heading 2 and above. No Heading 1. Images are not supported.",
           formatting: true,
           links: true,
         }),
@@ -871,7 +872,8 @@ export default config({
         }),
         content: fields.document({
           label: "Terms of Service Content",
-          description: "Use only Heading 2 and above. No Heading 1. Images are not supported.",
+          description:
+            "Use only Heading 2 and above. No Heading 1. Images are not supported.",
           formatting: true,
           links: true,
         }),
@@ -900,7 +902,8 @@ export default config({
         }),
         content: fields.document({
           label: "Refund Policy Content",
-          description: "Use only Heading 2 and above. No Heading 1. Images are not supported.",
+          description:
+            "Use only Heading 2 and above. No Heading 1. Images are not supported.",
           formatting: true,
           links: true,
         }),
@@ -955,24 +958,20 @@ export default config({
             "Makes up the individual project page. ONLY use Paragraphs, Heading 2s and Heading 3s. We do not support Quotes & Code (The last two icons in the bar.)",
           formatting: true,
           links: true,
-          // images: {
-          //   directory: "/public/images/projects/individual/",
-          //   publicPath: "/images/projects/individual/",
-          //   schema: {
-          //     alt: fields.text({
-          //       label: "Image Alternate Text",
-          //       description:
-          //         "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
-          //       validation: {
-          //         length: { min: 1 },
-          //       },
-          //     }),
-          //     title: fields.text({
-          //       label: "Image Caption",
-          //       description: "This is optional. Displayed under the image.",
-          //     }),
-          //   },
-          // },
+          images: {
+            directory: "public/images/projects/img",
+            publicPath: "/images/projects/img",
+            schema: {
+              alt: fields.text({
+                label: "Image Alternate Text",
+                description:
+                  "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+                validation: {
+                  length: { min: 1 },
+                },
+              }),
+            },
+          },
         }),
       },
     }),
@@ -1023,24 +1022,20 @@ export default config({
             "Makes up the individual centre page. ONLY use Paragraphs, Heading 2s and Heading 3s. We do not support Quotes & Code (The last two icons in the bar.)",
           formatting: true,
           links: true,
-          // images: {
-          //   directory: "/public/images/projects/individual/",
-          //   publicPath: "/images/projects/individual/",
-          //   schema: {
-          //     alt: fields.text({
-          //       label: "Image Alternate Text",
-          //       description:
-          //         "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
-          //       validation: {
-          //         length: { min: 1 },
-          //       },
-          //     }),
-          //     title: fields.text({
-          //       label: "Image Caption",
-          //       description: "This is optional. Displayed under the image.",
-          //     }),
-          //   },
-          // },
+          images: {
+            directory: "/public/images/projects/img",
+            publicPath: "/images/projects/img",
+            schema: {
+              alt: fields.text({
+                label: "Image Alternate Text",
+                description:
+                  "This is read out to visually impaired users and displayed in a situation where the image was unable to load for any reason.",
+                validation: {
+                  length: { min: 1 },
+                },
+              }),
+            },
+          },
         }),
       },
     }),
