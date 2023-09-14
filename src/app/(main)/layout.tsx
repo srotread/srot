@@ -73,7 +73,7 @@ export default function MainLayout({
       </head>
       <Script
         strategy="lazyOnload"
-        src="https://neesh-umami.vercel.app/script.js"
+        src="https://umami.neeshsamsi.com/script.js"
         data-website-id="13d7f4ef-b903-4188-b145-a416895e10ab"
       />
       <body className="font-primary">
