@@ -112,7 +112,7 @@ const Work = async (): Promise<JSX.Element> => {
           {involvedHeadline}
         </h3>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2 2xl:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2">
           {involvements.map(({ title, description }) => (
             <div
               key={title}
