@@ -72,7 +72,7 @@ const Centres = async (): Promise<JSX.Element> => {
           {headline}
         </h1>
 
-        <p className="mt-9 w-[50ch] text-lg 2xl:mt-16 2xl:text-xl 3xl:text-2xl">
+        <p className="mt-9 max-w-[50ch] text-lg 2xl:mt-16 2xl:text-xl 3xl:text-2xl">
           {subheadline}
         </p>
       </main>
