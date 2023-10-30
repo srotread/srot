@@ -1,3 +1,5 @@
+import { type Viewport } from "next"
+
 import { Bitter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
@@ -13,6 +15,13 @@ const bitter = Bitter({
   weight: ["300", "400", "500", "700"],
   variable: "--font-bitter",
 })
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#FFF",
+}
 
 export async function generateMetadata() {
   const config = await reader.singletons.config.read()
@@ -52,7 +61,6 @@ export async function generateMetadata() {
       creator: twitter,
       card: "summary",
     },
-    themeColor: "#FFF",
     alternates: {
       canonical: url,
     },

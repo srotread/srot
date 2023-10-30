@@ -1,5 +1,7 @@
 "use client"
 
+import { type Viewport } from "next"
+
 import { Bitter } from "next/font/google"
 import "./(main)/globals.css"
 
@@ -11,6 +13,13 @@ const bitter = Bitter({
   weight: ["300", "400", "500", "700"],
   variable: "--font-bitter",
 })
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#FFF",
+}
 
 const title = "404 - Page not found"
 const description =
@@ -29,7 +38,6 @@ export const metadata = {
     description,
     card: "summary",
   },
-  themeColor: "#FFF",
 }
 
 export default function NotFound() {
