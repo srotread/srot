@@ -3,7 +3,7 @@ metaDescription: Something
 headline: Srot Media
 gallerySections:
   - title: News & Events
-    description: Some description about news & events
+    description: A lot happens at the centre all time. Catch a glimpse!
     images:
       - image: /images/media/gallerySections/0/images/0/image.png
         imageAlt: Image 1
@@ -15,7 +15,7 @@ gallerySections:
       - image: /images/media/gallerySections/0/images/3/image.png
         imageAlt: Image 4
   - title: Workshops
-    description: Section about workshops and stuff
+    description: Workshops are organized periodically at the Centre
     images:
       - image: /images/media/gallerySections/1/images/0/image.jpg
         imageAlt: Image 1
@@ -27,6 +27,7 @@ gallerySections:
         imageAlt: Image 3
         caption: 'Photography workshop: Learning to capture the beauty all around!'
   - title: Day to Day Activities
+    description: Want to see how we spend our days!?
     images:
       - image: /images/media/gallerySections/2/images/0/image.JPG
         imageAlt: Image 1
@@ -38,6 +39,9 @@ gallerySections:
         imageAlt: Image 3
         caption: Some work and then... Some play, of course!
   - title: Excursions & Field Trips
+    description: >-
+      We try to make sure that the students take a trip each year. We are
+      convinced that travel is an important part of learning.
     images:
       - image: /images/media/gallerySections/3/images/0/image.jpg
         imageAlt: Image 1
