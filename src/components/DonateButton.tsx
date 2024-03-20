@@ -15,7 +15,7 @@ const DonateButton = () => {
     Form!.appendChild(Script)
   }, [])
 
-  return <form id="donateForm" />
+  return <form id="donateForm" data-umami-event="Razorpay Donate Button" />
 }
 
 export default DonateButton
