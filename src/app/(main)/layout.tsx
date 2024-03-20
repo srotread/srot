@@ -84,7 +84,7 @@ export default function MainLayout({
         src="https://umami.neeshsamsi.com/script.js"
         data-website-id="13d7f4ef-b903-4188-b145-a416895e10ab"
       />
-      <body className="font-primary">
+      <body className={`${bitter.variable} font-primary`}>
         <Navbar />
         {children}
         <Footer />
