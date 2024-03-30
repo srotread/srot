@@ -81,7 +81,7 @@ export default function MainLayout({
       <Script
         strategy="lazyOnload"
         src="https://umami.neeshsamsi.com/script.js"
-        data-website-id="13d7f4ef-b903-4188-b145-a416895e10ab"
+        data-website-id="7be41c8e-6895-4385-acf2-95086f17a1e0"
       />
       <body className={`${bitter.variable} font-primary`}>
         <Navbar />

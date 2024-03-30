@@ -5,7 +5,7 @@ const nextConfig = {
       {
         source: "/stats",
         destination:
-          "https://umami.neeshsamsi.com/websites/13d7f4ef-b903-4188-b145-a416895e10ab",
+          "https://umami.neeshsamsi.com/websites/7be41c8e-6895-4385-acf2-95086f17a1e0",
         permanent: true,
       },
     ]
