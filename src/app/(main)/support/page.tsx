@@ -87,12 +87,12 @@ const Support = async (): Promise<JSX.Element> => {
               href={donationUrl}
               target="_blank"
               className="mt-8 inline-block text-xl lg:text-2xl 2xl:mt-12 3xl:text-3xl"
-              data-umami-event="Razorpay Donate Button"
             >
               <Button
                 text={cta ? cta : "Donate now"}
                 theme="Light"
                 type="Primary"
+                data-umami-event="Razorpay Donate Button"
               />
             </a>
           </div>
