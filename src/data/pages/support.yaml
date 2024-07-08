@@ -7,13 +7,13 @@ image: /images/support/image.jpg
 imageAlt: Something
 statistics:
   - cta: Join
-    number: 60
+    number: 67
     noun: Supporters
   - cta: Help run
-    number: 2
+    number: 3
     noun: Centers in the Tirthan Valley
   - cta: Nurture
-    number: 30
+    number: 300
     noun: Local Students
 content: Your support is invaluable to us in our work. We deeply appreciate it!
 cta: Donate now
