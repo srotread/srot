@@ -10,8 +10,6 @@ gallerySections:
         caption: Test Caption 1
       - image: /images/media/gallerySections/0/images/1/image.png
         imageAlt: Image 2
-      - image: /images/media/gallerySections/0/images/2/image.png
-        imageAlt: Image 3
   - title: Workshops
     description: Workshops are organized periodically at the Centre
     images:
