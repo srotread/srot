@@ -4,7 +4,13 @@ headline: Srot Media
 gallerySections:
   - title: News & Events
     description: A lot happens at the centre all time. Catch a glimpse!
-    images: []
+    images:
+      - image: /images/media/gallerySections/0/images/0/image.jpg
+        imageAlt: Children learning numbers using Jodo Gyan blocks
+        caption: Children learning numbers using Jodo Gyan blocks
+      - image: /images/media/gallerySections/0/images/1/image.jpg
+        imageAlt: Making a new friend who wandered into class!
+        caption: Making a new friend who wandered into class!
   - title: Workshops
     description: Workshops are organized periodically at the Centre
     images:
