@@ -11,6 +11,9 @@ gallerySections:
       - image: /images/media/gallerySections/0/images/1/image.jpg
         imageAlt: Making a new friend who wandered into class!
         caption: Making a new friend who wandered into class!
+      - image: /images/media/gallerySections/0/images/2/image.jpg
+        imageAlt: Paints distributed on the occasion of Teachers' day
+        caption: Teachers' day celebration at the Mungla Centre
   - title: Workshops
     description: Workshops are organized periodically at the Centre
     images:
