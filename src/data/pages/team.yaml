@@ -66,9 +66,23 @@ teamSections:
           director for advertising. He enjoys travelling, meeting people and
           having meaningful conversations with them. He also has a special
           interest in art education. 
-  - designation: Facilitation Team
+  - designation: Project Head
     members:
       - image: /images/team/teamSections/1/members/0/image.jpg
+        imageAlt: Chandni Bisht, Head of Rural Education Project (Tirthan)
+        name: Chandni Bisht
+        title: Head, Rural Education Project (Tirthan)
+        description: >-
+          Chandni joined Srot in July 2022 and was the third member of the team.
+          She has run and been in-charge of the Mungla centre for the last 2
+          years. Her positivity and willingness to work is a great asset. Her
+          ability to put children at ease and get them interested in learning is
+          well-appreciated. Over these past two years, she has developed the
+          confidence to take on bigger roles and is now taking the lead in
+          helping Srot expand and grow. 
+  - designation: Facilitation Team
+    members:
+      - image: /images/team/teamSections/2/members/0/image.jpg
         imageAlt: >-
           Pushpa is a local teacher with a Master's in Commerce. She is always
           looking to improve as a facilitator and her calm personality makes it
@@ -82,7 +96,7 @@ teamSections:
           looking to learn new and better ways to help children learn. Her
           simplicity and calm make it easy for the kids to feel comfortable
           around her and learn. 
-      - image: /images/team/teamSections/1/members/1/image.jpg
+      - image: /images/team/teamSections/2/members/1/image.jpg
         imageAlt: Seema
         name: Seema
         title: Facilitator
@@ -91,7 +105,7 @@ teamSections:
           significantly as a teacher and has been working with the youngest
           students at the Mungla centre. Her easy going demeanor helps her deal
           with the kids she works with.
-      - image: /images/team/teamSections/1/members/2/image.jpg
+      - image: /images/team/teamSections/2/members/2/image.jpg
         imageAlt: Raj Kumari
         name: Raj Kumari
         title: Facilitator
@@ -101,17 +115,3 @@ teamSections:
           of working with organisations in Ambala and Chandigarh. She brings the
           same experience to the table as she works with students of class 6 and
           above at the Mungla centre.  
-  - designation: Project Head
-    members:
-      - image: /images/team/teamSections/2/members/0/image.jpg
-        imageAlt: Chandni Bisht, Head of Rural Education Project (Tirthan)
-        name: Chandni Bisht
-        title: Head, Rural Education Project (Tirthan)
-        description: >-
-          Chandni joined Srot in July 2022 and was the third member of the team.
-          She has run and been in-charge of the Mungla centre for the last 2
-          years. Her positivity and willingness to work is a great asset. Her
-          ability to put children at ease and get them interested in learning is
-          well-appreciated. Over these past two years, she has developed the
-          confidence to take on bigger roles and is now taking the lead in
-          helping Srot expand and grow. 
