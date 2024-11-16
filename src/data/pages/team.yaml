@@ -68,33 +68,7 @@ teamSections:
           interest in art education. 
   - designation: Facilitation Team
     members:
-      - image: /images/team/teamSections/1/members/0/image.jpeg
-        imageAlt: >-
-          Devanshi is an architect who is a key part of the team. She works with
-          kids across age groups and they love being around her. 
-        name: Devanshi Shah
-        title: Facilitator
-        description: >-
-          Devanshi is an Architect by training and joined us in June 2022 after
-          working at an architecture and interior design firm in Mumbai for 2
-          years. She has been instrumental in stabilising the project in Tirthan
-          by capably taking over some tasks. She works with the kids across age
-          groups and the kids love being around her. 
-      - image: /images/team/teamSections/1/members/1/image.jpg
-        imageAlt: >-
-          Chandni is a local teacher with a Master's degree in History. She is
-          dedicated to helping children learn better as well as to her own
-          continued learning and growth. 
-        name: Chandni Bisht
-        title: Facilitator
-        description: >-
-          Chandni is a local from Tirthan. She completed her MA with History and
-          was looking for teaching jobs when we found her. She joined us in July
-          2022. Very interested in and dedicated to helping children learn, she
-          is equally interested in her own continued learning and growth. Very
-          jovial and easy to work with, she has been a great addition to the
-          team.
-      - image: /images/team/teamSections/1/members/2/image.jpg
+      - image: /images/team/teamSections/1/members/0/image.jpg
         imageAlt: >-
           Pushpa is a local teacher with a Master's in Commerce. She is always
           looking to improve as a facilitator and her calm personality makes it
@@ -108,6 +82,25 @@ teamSections:
           looking to learn new and better ways to help children learn. Her
           simplicity and calm make it easy for the kids to feel comfortable
           around her and learn. 
+      - image: /images/team/teamSections/1/members/1/image.jpg
+        imageAlt: Seema
+        name: Seema
+        title: Facilitator
+        description: >-
+          Seema joined the team in September 2023. Since then she has grown
+          significantly as a teacher and has been working with the youngest
+          students at the Mungla centre. Her easy going demeanor helps her deal
+          with the kids she works with.
+      - image: /images/team/teamSections/1/members/2/image.jpg
+        imageAlt: Raj Kumari
+        name: Raj Kumari
+        title: Facilitator
+        description: >-
+          Raj Kumari, affectionately called Bittu joined the team in May 2024.
+          She has a Master's degree in Computer Application and has experience
+          of working with organisations in Ambala and Chandigarh. She brings the
+          same experience to the table as she works with students of class 6 and
+          above at the Mungla centre.  
   - designation: Project Head
     members:
       - image: /images/team/teamSections/2/members/0/image.jpg
