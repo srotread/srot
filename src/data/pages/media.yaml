@@ -5,15 +5,15 @@ gallerySections:
   - title: News & Events
     description: A lot happens at the centre all time. Catch a glimpse!
     images:
-      - image: /images/media/gallerySections/0/images/0/image.jpg
-        imageAlt: Children learning numbers using Jodo Gyan blocks
-        caption: Children learning numbers using Jodo Gyan blocks
-      - image: /images/media/gallerySections/0/images/1/image.jpg
-        imageAlt: Making a new friend who wandered into class!
-        caption: Making a new friend who wandered into class!
-      - image: /images/media/gallerySections/0/images/2/image.jpg
-        imageAlt: Paints distributed on the occasion of Teachers' day
-        caption: Teachers' day celebration at the Mungla Centre
+      - image: /images/media/gallerySections/0/images/0/image.png
+        imageAlt: Young wanderers Workshop announced
+        caption: Young wanderers programme Apr/May 2025
+      - image: /images/media/gallerySections/0/images/1/image.png
+        imageAlt: Young Wanderers Programme Announced
+        caption: Young Wanderers Programme Apr/May 2025
+      - image: /images/media/gallerySections/0/images/2/image.png
+        imageAlt: Young Wanderers Programme Announced
+        caption: Young Wanderers Programme Apr/May 2025
   - title: Workshops
     description: Workshops are organized periodically at the Centre
     images:
